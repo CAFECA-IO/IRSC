@@ -1,0 +1,5 @@
+{
+  "name": "iSunFA IRSC Analyst",
+  "description": "A comprehensive corporate analysis tool generating 8-dimensional IRSC reports (ECQ, MMP, UEE, GDI, TPM, SRR, ERE, GES) using Gemini AI.",
+  "requestFramePermissions": []
+}
