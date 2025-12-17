@@ -21,7 +21,13 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     title: `${report.companyName} - IRSC Analysis`,
     description: `View the AI-powered due diligence report for ${report.companyName}.`,
     openGraph: {
-      images: [`/report/${id}/opengraph_image`],
+      images: [
+        {
+          url: `/report/${id}/opengraph_image`,
+          width: 1200,
+          height: 630,
+        }
+      ],
     }
   };
 }
