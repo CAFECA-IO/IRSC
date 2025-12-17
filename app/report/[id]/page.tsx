@@ -3,6 +3,7 @@
 import { fetchReportById } from '@/lib/report_utils';
 import { MarkdownView } from '@/components/markdown_view';
 import { IRSCRadarChart } from '@/components/irsc_radar_chart';
+import { CollapsibleSection } from '@/components/collapsible_section';
 import Link from 'next/link';
 import { Dimension, Reports, Scores } from '@/interfaces/types';
 
@@ -20,7 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     title: `${report.companyName} - IRSC Analysis`,
     description: `View the AI-powered due diligence report for ${report.companyName}.`,
     openGraph: {
-      images: [`/report/${id}/opengraph-image`],
+      images: [`/report/${id}/opengraph_image`],
     }
   };
 }
@@ -77,7 +78,7 @@ export default async function ReportPage({ params }: { params: Promise<{ id: str
             <div className="text-6xl font-bold text-white mb-2">{avgScore}</div>
             <div className="text-sm text-slate-400 uppercase tracking-widest">Overall Score</div>
           </div>
-          <div className="flex-1 w-full h-[300px]">
+          <div className="flex-1 w-full">
             <IRSCRadarChart scores={data.scores as any} />
           </div>
         </div>
@@ -91,18 +92,14 @@ export default async function ReportPage({ params }: { params: Promise<{ id: str
         )}
 
         {/* Dimensions */}
-        <div className="space-y-6">
+        <div className="space-y-4">
           {Object.keys(data.reports).filter(k => k !== 'FINAL').map(dim => (
-            <div key={dim} className="bg-[#1e2330]/50 rounded-xl p-6 border border-white/5">
-              <div className="flex justify-between items-center mb-4">
-                <h3 className="text-xl font-bold text-amber-400">{dim}</h3>
-                <div className="text-2xl font-bold text-white">{data.scores[dim] || '-'}</div>
-              </div>
-              <div className="prose prose-invert max-w-none text-sm opacity-80 h-32 overflow-hidden relative">
-                <MarkdownView content={data.reports[dim]} />
-                <div className="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-[#1e2330] to-transparent"></div>
-              </div>
-            </div>
+            <CollapsibleSection
+              key={dim}
+              title={dim}
+              score={data.scores[dim]}
+              content={data.reports[dim]}
+            />
           ))}
         </div>
 
