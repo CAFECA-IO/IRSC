@@ -36,4 +36,30 @@ Structure:
 
 ---
 **Disclaimer:** This report is AI-generated for informational purposes only (IRSC-Analyst v1.0.0). Not financial advice.
+
+# Input Data for Analysis:
+
+## 1. ECQ Report
+[ECQ_CONTENT]
+
+## 2. MMP Report
+[MMP_CONTENT]
+
+## 3. UEE Report
+[UEE_CONTENT]
+
+## 4. GDI Report
+[GDI_CONTENT]
+
+## 5. TPM Report
+[TPM_CONTENT]
+
+## 6. SRR Report
+[SRR_CONTENT]
+
+## 7. ERE Report
+[ERE_CONTENT]
+
+## 8. GES Report
+[GES_CONTENT]
   `;

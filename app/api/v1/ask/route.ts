@@ -122,6 +122,7 @@ export async function POST(req: NextRequest) {
     (async () => {
       try {
         let text = "";
+        const model = process.env.MODEL || "gemini-2.0-flash-exp";
 
         if (type === 'report') {
           const { model, language, companyName } = payload;
@@ -131,7 +132,7 @@ export async function POST(req: NextRequest) {
           const fullPrompt = `${STRICT_PROTOCOLS}\n${langInstruction}\n\n**Target Company:** ${companyName}\n\n${prompt}`;
 
           const response = await ai.models.generateContent({
-            model: model,
+            model,
             contents: fullPrompt,
             config: { tools: [{ googleSearch: {} }] }
           });
@@ -153,7 +154,7 @@ export async function POST(req: NextRequest) {
           fullPrompt = fullPrompt.replace("[GES_CONTENT]", reports.GES || "No Data");
 
           const response = await ai.models.generateContent({
-            model: "gemini-3-pro-preview",
+            model,
             contents: fullPrompt,
           });
           text = response.text || "Failed to generate final report.";

@@ -2,12 +2,11 @@
 
 import React, { useState, useCallback, useRef, useEffect } from 'react';
 import { UI_TEXT, DIMENSION_LABELS_MULTILINGUAL } from '@/constants/ui_text';
-import { extractScore, generateReport, generateFinalReport, getRecentReports, getReportDetails } from '@/services/analyzer';
+import { extractScore, startAnalysis, getJobStatus, getRecentReports, getReportDetails, JobStatus } from '@/services/analyzer';
 import { Dimension, Reports, Scores, Language, HistoryItem } from '@/interfaces/types';
 import { MarkdownView } from '@/components/markdown_view';
 import { IRSCRadarChart } from '@/components/irsc_radar_chart';
 
-const MODEL_FAST = "gemini-3-pro-preview";
 const HISTORY_KEY = 'isunfa_history_v1';
 const MAX_HISTORY = 10;
 
@@ -157,55 +156,86 @@ export default function Home() {
     setActiveTab(Dimension.ECQ);
 
     try {
-      const tempReports: any = {};
-      const tempScores: any = {};
+      const jobId = await startAnalysis(companyName, language);
 
-      const sessionId = crypto.randomUUID();
+      // Start polling
+      const poll = async () => {
+        if (abortRef.current) return;
 
-      for (let i = 0; i < 8; i++) {
-        if (abortRef.current) break;
+        try {
+          const status = await getJobStatus(jobId);
 
-        const dim = STEPS[i] as Exclude<Dimension, Dimension.FINAL>;
-        setCurrentStepIndex(i);
+          if (status.status === 'failed') {
+            setError(status.error || "Analysis failed");
+            setIsProcessing(false);
+            return;
+          }
 
+          // Update Reports & Scores
+          // We only update if we have new data to avoid unnecessary renders, 
+          // or just overwrite since React handles diffing.
+          if (status.results) {
+            setReports(prev => ({ ...prev, ...status.results }));
 
-        const resultText = await generateReport(MODEL_FAST, companyName, language, sessionId, dim);
+            // Extract scores from current results
+            const currentScores: Scores = {} as Scores;
+            Object.entries(status.results).forEach(([key, val]) => {
+              if (key !== 'Final Report' && key !== 'DONE') {
+                // @ts-ignore
+                currentScores[key as Dimension] = extractScore(val);
+              }
+            });
+            setScores(prev => ({ ...prev, ...currentScores }));
 
-        if (abortRef.current) break;
+            // Update Active Tab if logic dictates (e.g. follow progress)
+            // status.currentStep is like 'ECQ', 'MMP'
+            if (status.currentStep && status.currentStep !== 'DONE' && status.currentStep !== 'STARTING') {
+              const stepIdx = STEPS.indexOf(status.currentStep as Dimension);
+              if (stepIdx !== -1) setCurrentStepIndex(stepIdx);
+            }
+          }
 
-        tempReports[dim] = resultText;
-        setReports(prev => ({ ...prev, [dim]: resultText }));
+          if (status.status === 'completed') {
+            setIsProcessing(false);
+            setCurrentStepIndex(9); // Done
+            // Save to history
+            // We need to reconstruct the full report object for history
+            // status.results contains all markdown strings
+            const finalReports = status.results as unknown as Reports;
 
-        const score = extractScore(resultText);
-        tempScores[dim] = score;
-        setScores(prev => ({ ...prev, [dim]: score }));
+            const finalScores: Scores = {} as Scores;
+            Object.entries(status.results).forEach(([key, val]) => {
+              if (STEPS.includes(key as Dimension) && key !== Dimension.FINAL) {
+                // @ts-ignore
+                finalScores[key as Dimension] = extractScore(val);
+              }
+            });
 
-        // Auto-switch tab to show progress
-        setActiveTab(dim);
+            saveToHistory(finalReports, finalScores, companyName);
+            setCurrentReportId(jobId);
 
-        await new Promise(r => setTimeout(r, 800)); // Slight delay for UX pacing
-      }
+            setTimeout(() => {
+              analysisEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+            }, 100);
 
-      if (!abortRef.current) {
-        setCurrentStepIndex(8);
-        const finalRes = await generateFinalReport(companyName, tempReports, language, sessionId);
+          } else {
+            // Continued polling
+            setTimeout(poll, 2000);
+          }
 
-        setReports(prev => ({ ...prev, [Dimension.FINAL]: finalRes.result }));
+        } catch (e) {
+          console.error("Polling error", e);
+          // Don't stop on single poll error, retry
+          setTimeout(poll, 3000);
+        }
+      };
 
-        const newReports = { ...tempReports, [Dimension.FINAL]: finalRes.result };
-        saveToHistory(newReports, tempScores, companyName);
+      poll();
 
-        // Set current report ID for sharing
-        setCurrentReportId(finalRes.reportId);
-      }
     } catch (error) {
       console.error(error);
-      setError("An internal error occurred.");
-    } finally {
+      setError("Failed to start analysis.");
       setIsProcessing(false);
-      setTimeout(() => {
-        analysisEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-      }, 100);
     }
   }, [companyName, language]);
 
@@ -557,11 +587,60 @@ export default function Home() {
           )}
         </section>
 
+
         <div ref={analysisEndRef} />
 
-        {/* Dashboard Area */}
-        {Object.keys(reports).length > 0 && (
+        {/* Loading Overlay */}
+        {isProcessing && (
+          <div className="fixed inset-0 z-40 bg-[#0f1218] flex flex-col items-center justify-center p-8 animate-[fadeIn_0.5s_ease-out]">
+            <div className="max-w-md w-full text-center space-y-8">
+              <div className="relative w-24 h-24 mx-auto">
+                <div className="absolute inset-0 border-4 border-slate-800 rounded-full"></div>
+                <div className="absolute inset-0 border-4 border-t-orange-500 rounded-full animate-spin"></div>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <span className="text-2xl">🤖</span>
+                </div>
+              </div>
+
+              <div className="space-y-4">
+                <h2 className="text-2xl md:text-3xl font-bold text-white animate-pulse">
+                  AI is analyzing hundreds of financial documents...
+                </h2>
+                <p className="text-slate-400 font-mono text-sm">
+                  {currentStepIndex >= 0 && currentStepIndex < STEPS.length
+                    ? `Analyzing ${STEPS[currentStepIndex]}... (${Math.round(((currentStepIndex + 0.1) / 9) * 100)}%)`
+                    : "Initializing Analysis Protocol..."}
+                </p>
+              </div>
+
+              {/* Progress Bar */}
+              <div className="w-full h-2 bg-slate-800 rounded-full overflow-hidden relative">
+                <div
+                  className="absolute top-0 left-0 h-full bg-gradient-to-r from-orange-500 to-amber-500 transition-all duration-700 ease-in-out"
+                  style={{ width: `${Math.max(5, ((currentStepIndex + 1) / 9) * 100)}%` }}
+                ></div>
+              </div>
+
+              <div className="grid grid-cols-3 gap-2 text-[10px] text-slate-600 font-mono uppercase tracking-widest mt-8 opacity-50">
+                <div className="text-left">1. Data Collection</div>
+                <div className="text-center">2. Reasoning</div>
+                <div className="text-right">3. Synthesis</div>
+              </div>
+
+              <button
+                onClick={handleStop}
+                className="mt-12 text-slate-500 hover:text-red-400 text-sm transition-colors border border-transparent hover:border-red-500/30 px-4 py-2 rounded"
+              >
+                Cancel Analysis
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* Dashboard Area (Hidden while processing) */}
+        {!isProcessing && Object.keys(reports).length > 0 && (
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 animate-[fadeIn_0.5s_ease-out]">
+
 
             {/* Sidebar Navigation */}
             <div className="lg:col-span-3 space-y-6">

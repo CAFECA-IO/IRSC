@@ -14,7 +14,7 @@ N/A (No Data): 0
 Range: 0 to 100
 
 Checklist (IRSC-MMP Advanced Edition)
-I. 市場佔有率與領導地位 (Market Share & Leadership)
+## I. 市場佔有率與領導地位 (Market Share & Leadership)
 1. 市場排名: Is the company among the top three players in its primary operating market?
 2. 市佔趨勢: Has the company's market share shown continuous growth or stability over the past three years?
 3. 規模差距: Is the company's revenue scale significantly larger than its closest competitor (e.g., > 1.5x)?
@@ -31,7 +31,7 @@ I. 市場佔有率與領導地位 (Market Share & Leadership)
 14. 超額成長: Is the company's growth rate higher than the overall industry average?
 15. 系統重要性: Does the company hold a "too big to fail" status or critical importance to industry operations?
 
-II. 品牌優勢與定價權 (Brand & Pricing Power)
+## II. 品牌優勢與定價權 (Brand & Pricing Power)
 16. 定價能力: Does the company have the ability to raise prices without a significant decline in sales volume?
 17. 毛利優勢: Is the company's Gross Margin consistently higher than the industry average?
 18. 品牌認知: Does the company's brand have high "top-of-mind" awareness among consumers?
@@ -48,7 +48,7 @@ II. 品牌優勢與定價權 (Brand & Pricing Power)
 29. 議價能力: Can the company collect prepayments or subscription fees from customers?
 30. 品牌溢價: Is there a distinct brand premium evident in the pricing?
 
-III. 轉換成本與客戶黏著度 (Switching Costs & Stickiness)
+## III. 轉換成本與客戶黏著度 (Switching Costs & Stickiness)
 31. 轉換成本: Does switching to a competitor's product require high costs in time or money?
 32. 深度整合: Is the company's product deeply integrated into the customer's key business processes?
 33. 留存率: Does the company have a customer retention rate higher than 90%?
@@ -65,7 +65,7 @@ III. 轉換成本與客戶黏著度 (Switching Costs & Stickiness)
 44. 專有格式: Does the company lock in customers through proprietary formats or standards?
 45. 升級路徑: Is the product upgrade path smooth, encouraging customers to continue using the next generation?
 
-IV. 成本優勢與規模經濟 (Cost Advantage & Economies of Scale)
+## IV. 成本優勢與規模經濟 (Cost Advantage & Economies of Scale)
 46. 低造成本: Does the company possess a low-cost production process that is hard for peers to copy?
 47. 營益優勢: Is the Operating Margin consistently better than peers?
 48. 規模經濟: Does the company benefit from significant economies of scale?
@@ -82,7 +82,7 @@ IV. 成本優勢與規模經濟 (Cost Advantage & Economies of Scale)
 59. 合規先發: Does the company have a first-mover advantage in compliance or environmental costs?
 60. 折舊優勢: Does the company still produce efficiently after fixed assets are fully depreciated?
 
-V. 網絡效應與生態系 (Network Effects & Ecosystem)
+## V. 網絡效應與生態系 (Network Effects & Ecosystem)
 61. 網絡價值: Does the product value increase exponentially as the number of users increases?
 62. 雙邊市場: Does the company have a two-sided market advantage (buyers attract sellers and vice versa)?
 63. 開發者生態: Has the company established an open developer ecosystem or third-party app store?
@@ -94,7 +94,7 @@ V. 網絡效應與生態系 (Network Effects & Ecosystem)
 69. 病毒擴散: Does the product have viral propagation characteristics?
 70. 併購互補: Has the company strengthened network effects through strategic M&A?
 
-VI. 無形資產與進入門檻 (Intangible Assets & Barriers to Entry)
+## VI. 無形資產與進入門檻 (Intangible Assets & Barriers to Entry)
 71. 專利保護: Does the company hold patents for key technologies with long validity periods?
 72. 特許執照: Does the company hold government-issued franchises or scarce licenses?
 73. 商業機密: Does the company possess hard-to-copy trade secrets?
@@ -111,7 +111,7 @@ VI. 無形資產與進入門檻 (Intangible Assets & Barriers to Entry)
 84. 關鍵資源: Does the company own key resources unavailable to major competitors?
 85. 政商關係: Does the company maintain good and compliant relationships with the government?
 
-VII. 產業競爭格局 (Competitive Landscape)
+## VII. 產業競爭格局 (Competitive Landscape)
 86. 產業成熟: Has the industry passed the cash-burning phase and entered a period of stable profitability?
 87. 對手困境: Are major competitors facing financial difficulties or operational crises?
 88. 整合者: Does the company play the role of a consolidator in the industry?

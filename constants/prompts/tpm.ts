@@ -15,7 +15,7 @@ Range: 0 to 100
 
 Checklist (IRSC-TPM Advanced Edition)
 
-I. 企業技術研發實力 (Company Tech R&D & Hard Power)
+## I. 企業技術研發實力 (Company Tech R&D & Hard Power)
 (評估企業是否有足夠的「內功」來打造護城河)
 1. 研發增長: Has the company's absolute R&D expenditure increased continuously over the past 3 years?
 2. 研發強度: Is the R&D-to-Revenue ratio significantly higher than the industry average (indicating aggressive tech investment)?
@@ -38,7 +38,7 @@ I. 企業技術研發實力 (Company Tech R&D & Hard Power)
 19. 獨家授權: Does the company hold exclusive IP licenses that block competitors from entering?
 20. 技術文化: Is the company widely recognized by engineers as a "Tech-First" culture?
 
-II. 產業風口與趨勢紅利 (Industry Windfall & Macro Trends)
+## II. 產業風口與趨勢紅利 (Industry Windfall & Macro Trends)
 (評估該產業是否為「風口」，即外部環境是否在推著公司飛)
 21. 高速成長: Is the projected CAGR (Compound Annual Growth Rate) of the industry > 15% for the next 5 years?
 22. 政策順風: Is the industry currently receiving massive government subsidies or favorable policy support (e.g., Green Deal, AI Chips)?
@@ -61,7 +61,7 @@ II. 產業風口與趨勢紅利 (Industry Windfall & Macro Trends)
 39. 國際競賽: Is this industry considered a strategic battleground between major geopolitical powers?
 40. 抗週期性: Does this trend persist even during economic downturns (Secular Growth Trend)?
 
-III. 產品競爭力與轉化 (Product Competitiveness & PMF)
+## III. 產品競爭力與轉化 (Product Competitiveness & PMF)
 (評估公司能否打造出符合風口需求的產品)
 
 41. 痛點解決: Does the product solve a "Must-have" problem rather than a "Nice-to-have" one?
@@ -85,7 +85,7 @@ III. 產品競爭力與轉化 (Product Competitiveness & PMF)
 59. 轉換障礙: Once adopted, is it costly or difficult for the customer to switch away?
 60. 單位經濟: Is the LTV/CAC ratio healthy (>3x) even in the early growth phase?
 
-IV. 市場動能與爆發力 (Market Momentum & Traction)
+## IV. 市場動能與爆發力 (Market Momentum & Traction)
 (評估市場對公司產品的實際反應與熱度)
 
 61. 營收爆發: Is the quarter-over-quarter revenue growth accelerating?
@@ -109,7 +109,7 @@ IV. 市場動能與爆發力 (Market Momentum & Traction)
 79. 意見領袖: Are top industry KOLs endorsing the product without paid sponsorship?
 80. 競對反應: Are competitors changing their strategy specifically to counter this company?
 
-V. 技術風險與持續性 (Tech Risk & Sustainability)
+## V. 技術風險與持續性 (Tech Risk & Sustainability)
 (評估是否只是曇花一現或存在致命弱點)
 
 81. 技術過時: Is there a risk of a newer technology rendering the company's tech obsolete overnight?

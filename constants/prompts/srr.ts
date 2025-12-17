@@ -14,7 +14,7 @@ N/A (No Data): 0
 Range: 0 to 100
 
 Checklist (IRSC-SRR Advanced Edition)
-I. 環境永續與氣候韌性 (Environmental Sustainability)
+## I. 環境永續與氣候韌性 (Environmental Sustainability)
 1. 脫碳路徑: Has the company validated its Net Zero targets with science-based standards (e.g., SBTi)?
 2. 準則接軌: Does the company align its disclosures with global standards like TCFD or ISSB (IFRS S1/S2)?
 3. 排放強度: Has the GHG emission intensity (Scope 1 & 2) consistently decreased over the past 3 years?
@@ -36,7 +36,7 @@ I. 環境永續與氣候韌性 (Environmental Sustainability)
 19. CDP 評級: Is the company's CDP Climate Change score at "Management Level" (B) or higher?
 20. 減塑時程: Is there a committed timeline for phasing out single-use plastics in operations?
 
-II. 法律合規與反壟斷風險 (Regulatory & Legal Compliance)
+## II. 法律合規與反壟斷風險 (Regulatory & Legal Compliance)
 21. 反壟斷: Is the company free from ongoing major antitrust/competition law investigations?
 22. 法遵獨立: Does the Chief Compliance Officer (CCO) have a direct reporting line to the Board?
 23. 反貪腐: Is the company free from violations of FCPA, UK Bribery Act, or local anti-corruption laws?
@@ -58,7 +58,7 @@ II. 法律合規與反壟斷風險 (Regulatory & Legal Compliance)
 39. 合約公平: Are standard consumer contracts reviewed to prevent "unfair terms" challenges?
 40. 繳稅紀錄: Is the company current on all tax obligations with no significant arrears?
 
-III. 數據隱私與資安監管 (Data Privacy, Cyber & Tech Regs)
+## III. 數據隱私與資安監管 (Data Privacy, Cyber & Tech Regs)
 41. 隱私合規: Is the company fully compliant with GDPR, CCPA/CPRA, and PIPL where applicable?
 42. 無重大外洩: Has the company avoided data breaches affecting >100k users in the past 3 years?
 43. 資安框架: Is the infosec management system certified (e.g., ISO 27001, NIST, SOC 2 Type II)?
@@ -80,7 +80,7 @@ III. 數據隱私與資安監管 (Data Privacy, Cyber & Tech Regs)
 59. 安全開發: Is "Security by Design" (DevSecOps) integrated into the software development lifecycle?
 60. 資安保險: Does the company carry adequate Cyber Liability Insurance coverage?
 
-IV. 社會責任與勞動力韌性 (Social Responsibility & Workforce)
+## IV. 社會責任與勞動力韌性 (Social Responsibility & Workforce)
 61. 留才能力: Is the voluntary employee turnover rate lower than the industry peer average?
 62. DEI 指標: Does the company publish quantitative metrics on Diversity, Equity, and Inclusion?
 63. 勞資關係: Is the company free from significant strikes or labor disputes in the last 3 years?
@@ -102,7 +102,7 @@ IV. 社會責任與勞動力韌性 (Social Responsibility & Workforce)
 79. 童工零容忍: Is there a strictly enforced ban on child labor across all tiers of the supply chain?
 80. 鄰避效應: Is the company free from major "NIMBY" (Not In My Backyard) community protests?
 
-V. 供應鏈與地緣政治韌性 (Supply Chain & Geopolitical Resilience)
+## V. 供應鏈與地緣政治韌性 (Supply Chain & Geopolitical Resilience)
 81. 產地多元: Has the company implemented a "China + 1" or regionalization strategy to de-risk production?
 82. 雙源採購: Are all critical components sourced from at least two qualified suppliers (Dual Sourcing)?
 83. 地緣曝險: Is revenue dependence on politically unstable regions capped at a manageable level?

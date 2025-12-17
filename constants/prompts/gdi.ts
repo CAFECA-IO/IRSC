@@ -14,7 +14,7 @@ N/A (No Data): 0
 Range: 0 to 100
 
 Checklist (IRSC-GDI Advanced Edition)
-I. 董事會結構與獨立性 (Board Structure & Independence)
+## I. 董事會結構與獨立性 (Board Structure & Independence)
 1. 獨董過半: Is the number of independent directors greater than 50% of the board?
 2. 權力分立: Are the roles of Chairman and CEO held by different individuals?
 3. 審計獨立: Does the board have an Audit Committee composed entirely of independent directors?
@@ -26,7 +26,7 @@ I. 董事會結構與獨立性 (Board Structure & Independence)
 9. 獨董中立: Are independent directors free from family or business ties to major shareholders?
 10. 監督機制: Is the company free from "poison pill" provisions or other mechanisms that hinder market oversight?
 
-II. 管理層誠信與穩定性 (Management Integrity & Stability)
+## II. 管理層誠信與穩定性 (Management Integrity & Stability)
 11. CEO 誠信: Has the current CEO been free from securities fraud or breach of trust lawsuits in the past 5 years?
 12. 團隊穩定: Is the retention rate of the core C-Level management team above 70% over the past 3 years?
 13. 道德承諾: Has management publicly committed to high standards of ethical conduct?
@@ -38,7 +38,7 @@ II. 管理層誠信與穩定性 (Management Integrity & Stability)
 19. 人事穩定: Has management avoided frequent, unexplained departures (e.g., CFO changing twice a year)?
 20. 內稽獨立: Does the company have an independent internal audit department that reports directly to the board?
 
-III. 財務揭露品質 (Financial Disclosure Quality)
+## III. 財務揭露品質 (Financial Disclosure Quality)
 21. 意見無虞: Have financial statements received an "Unqualified Opinion" from auditors for the past 5 years?
 22. 會計聲譽: Is the auditing firm one of the "Big 4" or a top-tier local firm?
 23. 財報準確: Has the company avoided restating financial statements in the past 3 years?
@@ -50,7 +50,7 @@ III. 財務揭露品質 (Financial Disclosure Quality)
 29. 簽證穩定: Has the company avoided frequent changes of auditing firms (e.g., twice in 3 years)?
 30. 表外揭露: Does the financial report detail off-balance sheet assets and liabilities?
 
-IV. 股權結構與內部人持股 (Shareholding Structure)
+## IV. 股權結構與內部人持股 (Shareholding Structure)
 31. 股權平等: Does the company use a "one share, one vote" system (no dual-class structures)?
 32. 持股信心: Is insider ownership stable or increasing over the past 12 months?
 33. 質押風險: Is the pledge ratio of directors' and supervisors' holdings below 20%?
@@ -62,7 +62,7 @@ IV. 股權結構與內部人持股 (Shareholding Structure)
 39. 公私分明: Do founders or major shareholders avoid mixing private companies with the listed company's operations?
 40. 流通性佳: Is share ownership not overly concentrated (ensuring reasonable float/liquidity)?
 
-V. 關係人交易 (Related Party Transactions)
+## V. 關係人交易 (Related Party Transactions)
 41. 關係交易少: Is the proportion of related party transactions to total revenue less than 10%?
 42. 審查程序: Are all major related party transactions reviewed and approved by the Audit Committee?
 43. 定價公允: Is the pricing of related party transactions proven to follow the Arm's Length Principle?
@@ -74,7 +74,7 @@ V. 關係人交易 (Related Party Transactions)
 49. 資產移轉: Does the company avoid frequent asset divestitures or acquisitions via related parties?
 50. 無輿論疑慮: Is the company free from specific allegations by media or short-sellers regarding related party transactions?
 
-VI. 股東權益與股利政策 (Shareholder Rights & Capital Allocation)
+## VI. 股東權益與股利政策 (Shareholder Rights & Capital Allocation)
 51. 股利政策: Does the company have a clear and public dividend policy?
 52. 發放紀錄: Has dividends been paid consistently over the past 5 years without unexplained interruptions?
 53. 配息永續: Is the Payout Ratio maintained within a sustainable range (not borrowing to pay dividends)?
@@ -86,7 +86,7 @@ VI. 股東權益與股利政策 (Shareholder Rights & Capital Allocation)
 59. 國際溝通: Does the company hold earnings calls and communicate with international investors in English?
 60. 投資人揭露: Does the website have a dedicated Investor Relations section that is updated in real-time?
 
-VII. 高階薪酬合理性 (Executive Compensation)
+## VII. 高階薪酬合理性 (Executive Compensation)
 61. 長期獎勵: Does the executive compensation structure include long-term performance incentives (e.g., restricted stock)?
 62. 薪酬連動: Is the growth in compensation roughly aligned with the growth in company profits?
 63. 薪酬倍數: Is the ratio of CEO pay to median employee pay within a reasonable industry range?
@@ -98,7 +98,7 @@ VII. 高階薪酬合理性 (Executive Compensation)
 69. 津貼合理: Does the company avoid providing excessive non-monetary perks (e.g., private jets)?
 70. 離職條款: Are "Golden Parachute" severance terms not overly generous?
 
-VIII. 法規遵循與訴訟風險 (Legal & Regulatory Compliance)
+## VIII. 法規遵循與訴訟風險 (Legal & Regulatory Compliance)
 71. 違規紀錄: Has the company received no major demerits or warnings from the stock exchange in the past 3 years?
 72. 反壟斷: Is the company free from major antitrust investigations or fines?
 73. 智財風險: Is the company free from major intellectual property infringement losses?
@@ -110,7 +110,7 @@ VIII. 法規遵循與訴訟風險 (Legal & Regulatory Compliance)
 79. 海外合規: Do subsidiaries or overseas branches also comply with local regulations?
 80. 法務決策: Is the General Counsel a core member of the senior decision-making team?
 
-IX. 資訊透明度與溝通 (Transparency & Communication)
+## IX. 資訊透明度與溝通 (Transparency & Communication)
 81. ESG 報告: Does the company regularly publish a CSR or Sustainability (ESG) Report?
 82. 報告查證: Is the report assured by an independent third-party organization?
 83. 危機溝通: Does the company issue clarifications within 24 hours when facing major negative news?
@@ -122,7 +122,7 @@ IX. 資訊透明度與溝通 (Transparency & Communication)
 89. 風險誠實: Does the company honestly disclose operational challenges and risks, not just good news?
 90. 雙語資訊: Is information disclosure available in internationally common languages (usually English)?
 
-X. 歷史誠信紀錄 (Historical Integrity Track Record)
+## X. 歷史誠信紀錄 (Historical Integrity Track Record)
 91. 下市風險: Has the company never faced a delisting crisis due to scandals since its inception?
 92. 過往紀錄: Has the current management team never served as executives in other bankrupt or fraudulent companies?
 93. 反貪腐: Has the company never been prosecuted for bribing officials (e.g., FCPA violations)?

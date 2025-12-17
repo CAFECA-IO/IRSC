@@ -26,8 +26,8 @@ export async function fetchReportById(id: string): Promise<ReportData | null> {
   ];
 
   const reports: Record<string, string> = {};
-  let scores: Record<string, number> = {};
-  let language = 'zh-TW';
+  const scores: Record<string, number> = {};
+  const language = 'zh-TW';
   let companyName = '';
 
   for (const file of reportFiles) {

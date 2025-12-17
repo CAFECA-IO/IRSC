@@ -14,7 +14,7 @@ N/A (No Data): 0
 Range: 0 to 100
 
 Checklist (IRSC-GES Advanced Edition)
-I. 市場潛力與定位 (Market Potential & Positioning)
+## I. 市場潛力與定位 (Market Potential & Positioning)
 1. 產業增速: Is the estimated CAGR of the company's primary industry greater than 5% for the next 5 years?
 2. 剛性需求: Does the company's main product address a "must-have" need rather than just a "nice-to-have" option?
 3. 市場規模: Is the Total Addressable Market (TAM) greater than $10 billion (or equivalent scale)?
@@ -36,7 +36,7 @@ I. 市場潛力與定位 (Market Potential & Positioning)
 19. 避免削價: Has the company successfully avoided price wars with low-cost competitors?
 20. 機構展望: Is the long-term outlook for the industry generally "Positive/Buy" among market analysts?
 
-II. 商業模式可擴展性 (Scalability of Business Model)
+## II. 商業模式可擴展性 (Scalability of Business Model)
 21. 邊際成本: Do marginal costs decrease as revenue scale expands?
 22. 輕資產: Does the company adopt an asset-light or platform business model?
 23. 人均產值: Is revenue growth faster than headcount growth?
@@ -58,7 +58,7 @@ II. 商業模式可擴展性 (Scalability of Business Model)
 39. 數據變現: Can data assets be converted into new monetization models?
 40. 難以複製: Is the business model difficult to reverse engineer or easily copy?
 
-III. 產品創新與技術動能 (Innovation & Tech Momentum)
+## III. 產品創新與技術動能 (Innovation & Tech Momentum)
 41. 新品影響力: Has the company launched market-impacting new products or services in the past year?
 42. 研發投入: Is the R&D to revenue ratio maintained at a healthy or growing level?
 43. 專利佈局: Does the company hold key technology patents with a continuous increase in quantity?
@@ -80,7 +80,7 @@ III. 產品創新與技術動能 (Innovation & Tech Momentum)
 59. 數據優化: Are product features continuously optimized through data analysis?
 60. 創新文化: Is an innovation culture deeply rooted, encouraging internal entrepreneurship or experimentation?
 
-IV. 行銷、通路與全球化 (Marketing, Channel & Globalization)
+## IV. 行銷、通路與全球化 (Marketing, Channel & Globalization)
 61. 國際佈局: Has the company successfully entered two or more major international markets?
 62. 海外佔比: Is the proportion of overseas revenue showing an upward trend year over year?
 63. 多元通路: Does the company possess diversified sales channels (Online + Offline + Distributors)?
@@ -102,7 +102,7 @@ IV. 行銷、通路與全球化 (Marketing, Channel & Globalization)
 79. 擴張藍圖: Is there a clear roadmap for global expansion over the next three years?
 80. 品牌溢價: Does brand premium allow selling at higher prices than similar competitors?
 
-V. 財務成長動能 (Financial Growth Momentum)
+## V. 財務成長動能 (Financial Growth Momentum)
 81. 營收增長: Is the most recent quarter's revenue YoY growth positive?
 82. 成長加速: Is the most recent quarter's revenue YoY growth higher than the average of the past four quarters?
 83. 毛利趨勢: Is Gross Margin showing a flat or upward trend?

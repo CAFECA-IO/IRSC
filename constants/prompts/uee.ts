@@ -14,7 +14,7 @@ N/A (No Data): 0
 Range: 0 to 100
 
 Checklist (IRSC-UEE Advanced Edition)
-I. 核心單位獲利能力 (Unit Profitability)
+## I. 核心單位獲利能力 (Unit Profitability)
 1. 高標毛利: Is the company's Gross Margin higher than the industry average?
 2. 毛利趨勢: Has the Gross Margin shown an upward trend over the past 3 years?
 3. 邊際貢獻: Is the Contribution Margin positive?
@@ -36,7 +36,7 @@ I. 核心單位獲利能力 (Unit Profitability)
 19. 現金毛利: Is the "FCF Margin" positive?
 20. 拒絕價戰: Does the company avoid vicious price wars that sacrifice gross margin for revenue?
 
-II. 客戶獲取與終身價值 (CAC & LTV)
+## II. 客戶獲取與終身價值 (CAC & LTV)
 21. 黃金比例: Is the LTV/CAC ratio greater than 3x?
 22. 回本速度: Is the CAC Payback Period less than 12 months?
 23. 獲客成本: Is the Customer Acquisition Cost (CAC) showing a downward or flat trend?
@@ -58,7 +58,7 @@ II. 客戶獲取與終身價值 (CAC & LTV)
 39. 新市場合理: Is the initial CAC for entering new markets within expectations?
 40. 人均產出: Is Sales Productivity per employee increasing year over year?
 
-III. 營運效率與周轉 (Operational Efficiency)
+## III. 營運效率與周轉 (Operational Efficiency)
 41. 存貨周轉: Are Days Sales of Inventory (DSI) lower than the same period last year?
 42. 庫存效率: Is the Inventory Turnover Ratio better than the industry average?
 43. 應收效率: Is Days Sales Outstanding (DSO) stable or decreasing?
@@ -80,7 +80,7 @@ III. 營運效率與周轉 (Operational Efficiency)
 59. 訂單消化: Is the company free from an excessive Backlog that cannot be fulfilled?
 60. 決策效率: Is the internal decision-making process evaluated as efficient?
 
-IV. 資本回報與結構 (Capital Efficiency)
+## IV. 資本回報與結構 (Capital Efficiency)
 61. 超額回報: Is Return on Invested Capital (ROIC) greater than WACC?
 62. 股東回報: Has Return on Equity (ROE) averaged greater than 15% over the past 3 years?
 63. 資產回報: Is Return on Assets (ROA) showing a stable or upward trend?
@@ -102,7 +102,7 @@ IV. 資本回報與結構 (Capital Efficiency)
 79. 資產優化: Do leasing and outsourcing strategies optimize the balance sheet?
 80. 利益一致: Does management hold a significant amount of shares?
 
-V. 趨勢動能與規模化 (Momentum & Scalability)
+## V. 趨勢動能與規模化 (Momentum & Scalability)
 81. 營收加速: Is the most recent quarter's revenue growth higher than the same period last year?
 82. 獲利加速: Is the most recent quarter's EPS growth rate higher than the revenue growth rate?
 83. 超越預期: Has the company met or exceeded market earnings expectations for 4 consecutive quarters?

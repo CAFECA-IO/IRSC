@@ -14,7 +14,7 @@ N/A (No Data): 0
 Range: 0 to 100
 
 Checklist (IRSC-ECQ Advanced Edition):
-I. 現金流轉化能力 (Cash Conversion)
+## I. 現金流轉化能力 (Cash Conversion)
 1. 盈利可信度: Is the most recent fiscal year's Operating Cash Flow (OCF) greater than Net Income?
 2. 長期含金量: Is the cumulative OCF over the past three years greater than cumulative Net Income?
 3. FCF 正數: Is the most recent fiscal year's Free Cash Flow (FCF) positive?
@@ -41,7 +41,7 @@ I. 現金流轉化能力 (Cash Conversion)
 24. 現金利息覆蓋: Is the Cash Interest Coverage Ratio (OCF/Interest Paid) greater than 5x?
 25. FCF 收益率: Is the FCF Yield higher than the industry average?
 
-II. 獲利穩定性與結構 (Earnings Stability & Structure)
+## II. 獲利穩定性與結構 (Earnings Stability & Structure)
 26. 毛利率趨勢: Has Gross Margin shown a stable or upward trend over the past five years?
 27. 季度毛利: Is the most recent quarter's Gross Margin better than the same period last year?
 28. 營益率趨勢: Has Operating Margin shown a stable or upward trend?
@@ -63,7 +63,7 @@ II. 獲利穩定性與結構 (Earnings Stability & Structure)
 44. 訂單出貨比: Is the Book-to-Bill Ratio greater than 1.0?
 45. 積壓訂單: Is the Backlog consistently increasing?
 
-III. 資產負債表健康度 (Balance Sheet Impact)
+## III. 資產負債表健康度 (Balance Sheet Impact)
 46. 流動比率: Is the Current Ratio greater than 1.5?
 47. 速動比率: Is the Quick Ratio greater than 1.0?
 48. 槓桿倍數: Is the Net Debt / EBITDA ratio less than 3.0?
@@ -85,7 +85,7 @@ III. 資產負債表健康度 (Balance Sheet Impact)
 64. 遞延稅資產: Is it likely that Deferred Tax Assets will be realized?
 65. 金融避險: Are financial asset investments properly hedged (e.g., currency hedging)?
 
-IV. 資本配置效率 (Capital Allocation Efficiency)
+## IV. 資本配置效率 (Capital Allocation Efficiency)
 66. 股東權益報酬: Is Return on Equity (ROE) greater than 15%?
 67. 投入資本回報: Is Return on Invested Capital (ROIC) greater than the Weighted Average Cost of Capital (WACC)?
 68. ROIC 趨勢: Has ROIC remained stable or increased over the past three years?
@@ -102,7 +102,7 @@ IV. 資本配置效率 (Capital Allocation Efficiency)
 79. 保留盈餘: Are Retained Earnings increasing year over year?
 80. 盈餘價值創造: Does every dollar of retained earnings create more than one dollar of market value?
 
-V. 會計誠信與紅旗警示 (Accounting Integrity & Red Flags)
+## V. 會計誠信與紅旗警示 (Accounting Integrity & Red Flags)
 81. 審計品質: Is the external auditor a "Big 4" firm or one with a strong reputation?
 82. 會計師更換: Has the company not changed its external auditor in the past three years?
 83. 審計意見: Are the financial reports consistently given an "Unqualified Opinion"?

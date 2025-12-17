@@ -5,9 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "build": "npm run lint && next build",
+    "start": "npm run build && next start",
+    "lint": "eslint ."
   },
   "dependencies": {
     "@google/genai": "^1.33.0",
@@ -21,9 +21,13 @@
     "tailwindcss": "^4.1.18"
   },
   "devDependencies": {
-    "@types/node": "^25.0.1",
+    "@eslint/eslintrc": "^3.3.3",
+    "@types/node": "^25.0.3",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
+    "eslint": "^9.39.2",
+    "eslint-config-next": "^16.0.10",
+    "eslint-config-prettier": "^10.1.8",
     "typescript": "^5.9.3"
   }
 }
