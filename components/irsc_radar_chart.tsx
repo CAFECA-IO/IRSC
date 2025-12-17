@@ -27,7 +27,7 @@ export const IRSCRadarChart: React.FC<Props> = ({ scores }) => {
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-500 to-amber-500 opacity-70"></div>
 
       <h3 className="text-center text-sm font-medium tracking-widest text-slate-400 uppercase mb-2">IRSC 8-Dimension Analysis</h3>
-      <div className="w-full h-full">
+      <div className="w-full h-full min-h-[300px]">
         <ResponsiveContainer width="100%" height="100%">
           <RadarChart cx="50%" cy="50%" outerRadius="70%" data={data}>
             <PolarGrid stroke="#475569" strokeDasharray="3 3" />

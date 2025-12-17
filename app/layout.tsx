@@ -1,10 +1,12 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import './globals.css'
+import '@/globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
+const url = process.env.NEXT_PUBLIC_APP_URL || 'https://irsc.isunfa.com'
 
 export const metadata: Metadata = {
+  metadataBase: new URL(url),
   title: 'iSunFA IRSC Analyst',
   description: 'AI-powered financing suitability analysis',
 }
