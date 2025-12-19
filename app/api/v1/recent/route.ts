@@ -13,11 +13,11 @@ export async function GET() {
       const data = JSON.parse(fileContent);
       // Return top 10
       return NextResponse.json(data.slice(0, 10));
-    } catch (error) {
+    } catch {
       // If file doesn't exist or error, return empty array
       return NextResponse.json([]);
     }
-  } catch (error) {
+  } catch {
     return NextResponse.json({ error: "Failed to fetch recent history" }, { status: 500 });
   }
 }

@@ -16,7 +16,7 @@ export async function GET(req: NextRequest, { params }: { params: Promise<{ id: 
     const content = await fs.readFile(jobPath, 'utf-8');
     const jobData = JSON.parse(content);
     return NextResponse.json(jobData);
-  } catch (e) {
+  } catch {
     return NextResponse.json({ error: "Job not found" }, { status: 404 });
   }
 }

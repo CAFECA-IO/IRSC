@@ -76,7 +76,7 @@ ${content}`;
     try {
       const existing = await fs.readFile(indexPath, 'utf-8');
       indexData = JSON.parse(existing);
-    } catch (e) {
+    } catch {
       // index might not exist yet
     }
 
@@ -118,6 +118,7 @@ export async function generateDimensionReport(
     const text = response.text || "No response generated.";
     return cleanResponse(text);
   } catch (error: any) {
+    // eslint-disable-next-line no-console
     console.error(`Error generating ${dimension}:`, error);
     throw error;
   }
@@ -151,6 +152,7 @@ export async function generateFinalReportService(
     const text = response.text || "Failed to generate final report.";
     return cleanResponse(text);
   } catch (error: any) {
+    // eslint-disable-next-line no-console
     console.error("Error generating Final Report:", error);
     throw error;
   }

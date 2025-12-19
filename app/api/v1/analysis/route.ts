@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { GoogleGenAI } from "@google/genai";
-import { Dimension, Language } from "@/interfaces/types";
+import { Dimension } from "@/interfaces/types";
 import { generateDimensionReport, generateFinalReportService, saveReportToFile } from "@/services/reporter";
 import fs from 'fs/promises';
 import path from 'path';
@@ -42,7 +42,7 @@ const updateJobFile = async (jobId: string, data: Partial<JobState>) => {
   try {
     const existing = await fs.readFile(jobPath, 'utf-8');
     currentJob = { ...currentJob, ...JSON.parse(existing) };
-  } catch (e) {
+  } catch {
     // New job
   }
 
@@ -121,6 +121,7 @@ export async function POST(req: NextRequest) {
         });
 
       } catch (err: any) {
+        // eslint-disable-next-line no-console
         console.error("Background Job Error:", err);
         await updateJobFile(jobId, {
           status: 'failed',
@@ -132,6 +133,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ jobId, status: 'started' });
 
   } catch (error: any) {
+    // eslint-disable-next-line no-console
     console.error("Analysis Request Error:", error);
     return NextResponse.json({ error: error.message }, { status: 500 });
   }

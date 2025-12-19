@@ -18,6 +18,7 @@ export async function GET(req: NextRequest, { params }: { params: Promise<{ id: 
     return NextResponse.json(data);
 
   } catch (error: any) {
+    // eslint-disable-next-line no-console
     console.error("Error fetching report:", error);
     return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
   }
