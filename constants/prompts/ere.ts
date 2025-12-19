@@ -13,116 +13,117 @@ False (Fail): -0.5
 N/A (No Data): 0
 Range: 0 to 100
 
-Checklist (IRSC-ECQ Advanced Edition)
-## I. 現金流轉化能力 (Cash Conversion)
-1. 盈利可信度: Is the most recent fiscal year's Operating Cash Flow (OCF) greater than Net Income?
-2. 長期含金量: Is the cumulative OCF over the past three years greater than cumulative Net Income?
-3. FCF 正數: Is the most recent fiscal year's Free Cash Flow (FCF) positive?
-4. 長期 FCF: Is the sum of FCF over the past three years positive?
-5. 現金轉換率: Is the OCF/NI Ratio greater than 1.0?
-6. 轉換率穩定性: Has the OCF/NI Ratio remained above 1.0 for three consecutive years?
-7. OCF 成長: Did the most recent quarter's OCF grow year-over-year (YoY)?
-8. 成長質量: Is the OCF growth rate higher than or equal to the Net Income growth rate?
-9. 每股 FCF 趨勢: Is FCF per Share trending upward (over a 3-year period)?
-10. 資本支出合理性: Is the ratio of Depreciation & Amortization to CapEx reasonable (e.g., CapEx not abnormally low)?
-11. 本業依賴度: Is the company not overly reliant on non-operating income (Non-operating income < 10%)?
-12. 盈餘品質: Is the Accruals Ratio at a low level (indicating fewer accruals and more cash)?
-13. EBITDA 轉換率: Is the EBITDA to OCF conversion ratio greater than 70%?
-14. 資產出售檢視: Does the company avoid frequently selling assets to beautify cash flow?
-15. 應收帳款管控: Is the Accounts Receivable growth rate lower than or equal to the revenue growth rate?
-16. 存貨管控: Is the Inventory growth rate lower than or equal to the revenue growth rate?
-17. 銷貨速度 (DSI): Did Days Sales of Inventory (DSI) decrease or remain flat YoY?
-18. 收現速度 (DSO): Did Days Sales Outstanding (DSO) decrease or remain flat YoY?
-19. 付款週期 (DPO): Is Days Payable Outstanding (DPO) stable (not abnormally extended to squeeze suppliers)?
-20. 現金循環 (CCC): Did the Cash Conversion Cycle (CCC) shorten YoY?
-21. 稅務現金流: Is the gap between cash taxes paid and reported income tax expense within a reasonable range?
-22. 費用資本化: Does the company avoid capitalizing normal operating expenses?
-23. 利息覆蓋率: Is the Interest Coverage Ratio (EBIT/Interest Expense) greater than 5x?
-24. 現金利息覆蓋: Is the Cash Interest Coverage Ratio (OCF/Interest Paid) greater than 5x?
-25. FCF 收益率: Is the FCF Yield higher than the industry average?
+ERE (IRSC-ECQ Advanced Edition)
+## 地緣政治與宏觀經濟 (Geopolitics & Macroeconomics) - 20題
+1. 該公司的主要營收來源國目前非處於戰爭或武裝衝突狀態?
+2. 該公司供應鏈不依賴於受國際嚴厲制裁的國家 (如目前的俄羅斯, 伊朗等)?
+3. 該公司產品未被列入主要大國 (如美國, 中國) 的出口管制或實體清單?
+4. 該公司主要市場的貨幣匯率在過去 12 個月內波動幅度小於 20%?
+5. 該公司是否已針對主要營運貨幣進行對沖 (Hedging) 以規避匯損?
+6. 該公司營收不單一依賴於政治高度不穩定的新興市場 (佔比 <30%)?
+7. 該公司總部所在地之企業稅率政策在未來 3 年內預期穩定?
+8. 該公司是否未受到跨國反避稅 (如全球最低稅負制) 的重大負面衝擊?
+9. 該公司所屬產業目前未處於中美貿易戰的關稅報復核心名單中?
+10. 該公司是否不受近期石油或天然氣價格劇烈波動的直接重大影響?
+11. 該公司在高通膨環境下, 是否具備轉嫁成本給客戶的定價能力?
+12. 該公司是否未面臨主要工廠所在地的國有化或資產徵收風險?
+13. 該公司是否與當地政府保持中立關係, 未捲入政黨輪替的清算風險?
+14. 該公司主要融資利率是否未受到聯準會升息的致命打擊 (如利息保障倍數仍 >3)?
+15. 該公司海外資金匯回 (Repatriation) 是否無重大資本管制障礙?
+16. 該公司是否未過度依賴單一國家的勞動力供給?
+17. 該公司是否未涉及敏感軍工或國安技術, 從而避免被外國政府強制審查?
+18. 該公司是否在脫歐 (Brexit) 或其他區域貿易協定變更後已完成合規調整?
+19. 該公司是否未受到主要市場針對外資企業的歧數政策影響?
+20. 該公司面對全球經濟衰退時, 其產品是否屬於剛性需求 (非週期性奢侈品)?
 
-## II. 獲利穩定性與結構 (Earnings Stability & Structure)
-26. 毛利率趨勢: Has Gross Margin shown a stable or upward trend over the past five years?
-27. 季度毛利: Is the most recent quarter's Gross Margin better than the same period last year?
-28. 營益率趨勢: Has Operating Margin shown a stable or upward trend?
-29. 淨利率趨勢: Has Net Profit Margin shown a stable or upward trend?
-30. 獲利波動度: Is Gross Margin volatility (standard deviation) lower than the industry average?
-31. 連續獲利: Has the company been profitable for five consecutive years (no loss-making years)?
-32. 核心獲利佔比: Does core operating profit account for more than 80% of Pre-tax Income?
-33. 資產減損: Does the company have no record of massive Asset Write-downs in the past 3 years?
-34. 銷售管理費率: Is the SG&A to Revenue ratio decreasing or flat (demonstrating economies of scale)?
-35. 研發投入: Is the R&D to Revenue ratio stable (not slashed to boost short-term profit)?
-36. 有效稅率: Is the Effective Tax Rate close to the statutory rate (no reliance on unsustainable tax breaks)?
-37. EPS 成長: Has EPS grown for three consecutive years?
-38. 調整後 EPS: Has Adjusted EPS (excluding non-recurring items) grown?
-39. 營收成長源: Is revenue growth driven by "volume" or "price" rather than just currency fluctuations?
-40. 客戶分散度: Is the company free from over-reliance on a single customer (Largest customer < 10%)?
-41. 供應商分散度: Is the company free from over-reliance on a single supplier (Largest supplier < 10%)?
-42. 定價權: Is the company's pricing power sufficient to pass on inflation costs (Gross Margin unaffected)?
-43. 經常性收入: Does Recurring Revenue account for more than 50% of total revenue?
-44. 訂單出貨比: Is the Book-to-Bill Ratio greater than 1.0?
-45. 積壓訂單: Is the Backlog consistently increasing?
+## 供應鏈與外部依賴 (Supply Chain & Dependencies) - 20題
+21. 該公司關鍵原物料供應商是否不具備單一來源 (Single Source) 風險?
+22. 該公司是否未依賴單一物流渠道 (如特定港口或運河) 導致斷鏈危機?
+23. 該公司上游供應商在過去 3 年內未發生重大勞工權益醜聞 (如強迫勞動)?
+24. 該公司是否擁有超過 3 個月以上的關鍵零組件安全庫存?
+25. 該公司是否未受到全球晶片或關鍵半導體短缺的直接停工威脅?
+26. 該公司主要生產基地是否具備備用電力系統以應對限電危機?
+27. 該公司是否未過度依賴特定客戶 (單一客戶營收佔比 <15%)?
+28. 該公司之雲端服務或數據中心是否具備異地備援機制?
+29. 該公司是否未面臨關鍵專利授權到期或被收回的外部風險?
+30. 該公司與主要供應商的合約是否包含不可抗力 (Force Majeure) 的保護條款?
+31. 該公司是否具備快速切換生產線以應對外部需求變化的能力?
+32. 該公司是否未受到國際航運價格飆漲的利潤嚴重侵蝕?
+33. 該公司是否未面臨上游原料被卡特爾 (Cartel) 組織聯合壟斷漲價的風險?
+34. 該公司經銷網絡是否分散, 未受制於單一大型通路商 (如 Amazon/Walmart) 的壓榨?
+35. 該公司是否未依賴特定稀缺自然資源 (如稀土, 鋰礦) 且無替代方案?
+36. 該公司是否已建立供應商多元化計畫以分散地緣風險?
+37. 該公司是否未發生過因供應商倒閉而導致的重大違約賠償?
+38. 該公司物流合作夥伴是否具備良好的工會關係, 無罷工風險?
+39. 該公司庫存周轉率是否健康, 無因外部需求驟降導致的庫存跌價損失?
+40. 該公司是否能夠獨立完成核心產品製造, 無需依賴競爭對手的代工?
 
-## III. 資產負債表健康度 (Balance Sheet Impact)
-46. 流動比率: Is the Current Ratio greater than 1.5?
-47. 速動比率: Is the Quick Ratio greater than 1.0?
-48. 槓桿倍數: Is the Net Debt / EBITDA ratio less than 3.0?
-49. 負債比率: Is the Debt to Equity ratio lower than the industry average or less than 1.0?
-50. 現金緩衝: Are Cash and Cash Equivalents sufficient to cover short-term debt for the next 12 months?
-51. 再融資風險: Does the company avoid having large amounts of debt maturing soon with refinancing difficulties?
-52. 商譽佔比: Is Goodwill less than 30% of Total Assets (avoiding impairment risk)?
-53. 無形資產: Is the proportion of Intangible Assets to Total Assets reasonable?
-54. 退休金負債: Are Pension Obligations Fully Funded?
-55. 表外負債: Is the company free from significant Off-balance sheet liabilities?
-56. 回購資金源: Are share buybacks funded by Free Cash Flow rather than debt?
-57. 異常項目: Does the company avoid abnormal increases in "Other Receivables" or "Prepayments"?
-58. 投資透明度: Are Long-term Investment valuations transparent and liquid?
-59. 信用評等: Is the company's Credit Rating Investment Grade?
-60. 違約紀錄: Has the company had no defaults or delayed interest payments in the past three years?
-61. 現金水位: Is the Cash to Total Assets ratio maintained at a healthy level (e.g., > 5%)?
-62. 存貨跌價準備: Is the allowance for inventory write-downs sufficient?
-63. 呆帳覆蓋率: Is the Allowance for doubtful accounts coverage sufficient?
-64. 遞延稅資產: Is it likely that Deferred Tax Assets will be realized?
-65. 金融避險: Are financial asset investments properly hedged (e.g., currency hedging)?
+## 法律, 合規與監管 (Legal, Regulatory & Compliance) - 20題
+41. 該公司目前是否未捲入索賠金額超過淨值 5% 的集體訴訟?
+42. 該公司是否未受到反壟斷 (Antitrust) 機構的立案調查?
+43. 該公司高階管理層過去 5 年內未涉及證券欺詐或內線交易指控?
+44. 該公司產品是否符合歐盟 GDPR 或各國最嚴格的數據隱私法規?
+45. 該公司是否未因環境汙染問題遭到環保局的重大罰款或勒令停工?
+46. 該公司是否未涉及侵犯他人核心專利的法律糾紛?
+47. 該公司是否未受到美國 FDA 或相關衛生主管機關的產品召回 (Recall) 命令?
+48. 該公司財務報表是否連續 5 年獲得會計師出具 「無保留意見」?
+49. 該公司是否未被列入勞動機關的 「血汗工廠」 或重大違規名單?
+50. 該公司是否未涉及跨國賄賂案件 (如違反 FCPA)?
+51. 該公司是否已針對即將實施的碳稅 (Carbon Tax) 做好財務準備?
+52. 該公司是否未因廣告不實遭受消費者保護機構的鉅額罰款?
+53. 該公司是否未面臨加密貨幣或新興金融法規變動的合規打擊?
+54. 該公司之併購案是否未遭到監管機構否決?
+55. 該公司是否未因歧視性招聘或職場騷擾面臨重大法律訴訟?
+56. 該公司是否完全遵守當地的最低工資與工時法規?
+57. 該公司是否未涉及洗錢防制 (AML) 相關的調查或制裁?
+58. 該公司之特許經營權或執照 (License) 在未來 3 年內無被撤銷風險?
+59. 該公司是否未因軟體盜版或授權違規被起訴?
+60. 該公司是否設有獨立的法遵部門直接向董事會報告?
 
-## IV. 資本配置效率 (Capital Allocation Efficiency)
-66. 股東權益報酬: Is Return on Equity (ROE) greater than 15%?
-67. 投入資本回報: Is Return on Invested Capital (ROIC) greater than the Weighted Average Cost of Capital (WACC)?
-68. ROIC 趨勢: Has ROIC remained stable or increased over the past three years?
-69. 資產報酬率: Is Return on Assets (ROA) greater than 5% or better than peers?
-70. 股東回饋: Has the company paid dividends or bought back shares for three consecutive years?
-71. 配息率: Is the Payout Ratio in a reasonable range (< 80%, ensuring retained earnings for reinvestment)?
-72. 再投資效益: Is the Reinvestment Rate commensurate with profit growth?
-73. 併購成效: Have major M&A deals in the past three years contributed positive cash flow?
-74. 擴張紀律: Has the company avoided overcapacity caused by blind expansion?
-75. 資產利用率: Is the proportion of idle assets extremely low?
-76. 資產週轉: Is Asset Turnover trending upward?
-77. 固定資產週轉: Is Fixed Asset Turnover better than the industry average?
-78. 殖利率: Is the Dividend Yield attractive and stable?
-79. 保留盈餘: Are Retained Earnings increasing year over year?
-80. 盈餘價值創造: Does every dollar of retained earnings create more than one dollar of market value?
+## 突發事件與災難韌性 (Black Swan & Disaster Resilience) - 20題
+61. 該公司是否已制定並演練過完整的業務連續性計畫 (BCP)?
+62. 該公司過去 12 個月內是否未發生導致服務中斷超過 24 小時的資安攻擊?
+63. 該公司主要資產是否已投保足額的火險, 水險與營運中斷險?
+64. 該公司總部與核心工廠是否位於非地震帶或非洪水高風險區?
+65. 該公司在 COVID-19 等大流行病期間, 是否證明具備遠距營運能力?
+66. 該公司是否未曾發生過大規模客戶個資外洩事件?
+67. 該公司是否具備應對勒索軟體 (Ransomware) 的備份還原機制?
+68. 該公司是否未因氣候變遷 (如極端高溫) 導致產能強制下降?
+69. 該公司是否針對關鍵技術人員設有 「關鍵人風險」 保險或繼任計畫?
+70. 該公司是否未發生過工安意外導致的人員死亡或重大停工?
+71. 該公司研發中心是否具備防止商業機密遭竊取的實體與數位防護?
+72. 該公司是否具備應對社交媒體假新聞攻擊的危機處理小組?
+73. 該公司是否未依賴單一老舊技術平台, 面臨技術崩潰風險?
+74. 該公司是否未因當地暴動或社會動盪導致資產受損?
+75. 該公司是否具備充足的現金流 (Cash Buffer) 以應對 6 個月零營收的極端狀況?
+76. 該公司是否未因供應鏈的碳足跡數據造假而陷入漂綠 (Greenwashing) 醜聞?
+77. 該公司是否具備應對能源價格瞬間飆漲 50% 的成本吸收能力?
+78. 該公司是否未面臨激進股東 (Activist Investor) 發起的經營權爭奪戰?
+79. 該公司是否未發生過高層無預警離職或失蹤的異常事件?
+80. 該公司是否具備應對核災或區域性生化危機的基本防護指引?
 
-## V. 會計誠信與紅旗警示 (Accounting Integrity & Red Flags)
-81. 審計品質: Is the external auditor a "Big 4" firm or one with a strong reputation?
-82. 會計師更換: Has the company not changed its external auditor in the past three years?
-83. 審計意見: Are the financial reports consistently given an "Unqualified Opinion"?
-84. 會計政策: Does the report avoid frequent changes in accounting policies or estimates (e.g., depreciation life)?
-85. 內部人賣股: Have insiders (major shareholders, management) avoided significant stock selling in the past six months?
-86. 內部人持股: Is insider ownership greater than 10% (aligning interests with shareholders)?
-87. 關係人交易: Are Related-party transactions minimal or zero?
-88. 營收認列: Is the revenue recognition policy conservative (not aggressive)?
-89. 塞貨檢測: Is the Q4 revenue proportion not abnormally high (checking for channel stuffing)?
-90. 監管紀錄: Has the company been free from investigations or penalties by securities regulators (last 3 years)?
-91. CFO 穩定度: Has the CFO tenure been stable (no resignation in the past 3 years)?
-92. 獨董比例: Do Independent Directors make up more than half of the Board?
-93. 審計委員會: Does the Audit Committee function normally and include members with financial expertise?
-94. 架構透明度: Is the company's complex structure (e.g., VIE, SPV) transparent enough not to obscure financials?
-95. 財報準時: Have financial reports never been delayed without cause?
-96. 薪酬掛鉤: Is management compensation linked to long-term performance (e.g., ROIC, EPS)?
-97.商譽淨值比: Does the company avoid an excessively high Goodwill to Net Worth ratio?
-98. 隱藏關係人: Is there no high proportion of Accounts Receivable from single undisclosed related parties?
-99. 訴訟風險: Is the company free from major legal litigation risks?
-100. 治理評價: Are negative reviews of corporate governance from media and analysts minimal?
+## 市場情緒與聲譽風險 (Market Sentiment & Reputation) - 20題
+81. 該公司過去 12 個月內未遭到知名做空機構 (Short Seller) 發布狙擊報告?
+82. 該公司在 Glassdoor 或類似職場評論網的員工滿意度是否高於 3.5 顆星?
+83. 該公司是否未發生過遭到網路上大規模抵制 (Boycott) 的事件?
+84. 該公司品牌是否未捲入具高度爭議的社會或政治議題?
+85. 該公司高層是否未在公開場合發表種族歧視或性別歧視言論?
+86. 該公司股價波動率 (Beta 值) 是否未異常高於同業平均水準?
+87. 該公司是否未被主要 ESG 評級機構 (如 MSCI, Sustainalytics) 降評?
+88. 該公司是否未出現大量內部人 (Insider) 拋售股票的訊號?
+89. 該公司是否未因產品設計缺陷導致消費者受傷的重大公關危機?
+90. 該公司與工會或勞工團體的關係是否和諧?
+91. 該公司是否未被媒體揭露 「有毒職場文化」?
+92. 該公司是否定期召開法說會並保持與投資人的透明溝通?
+93. 該公司分析師評級中, 「賣出」 建議的比例是否低於 10%?
+94. 該公司是否未涉及誤導投資人的財測 (Guidance) 修正?
+95. 該公司是否在主流社群媒體上擁有正面的品牌聲量 (Sentiment Analysis 為正)?
+96. 該公司是否未發生過挪用公款或各類掏空資產的傳聞?
+97. 該公司是否未過度依賴創辦人的個人光環 (Key Man Risk)?
+98. 該公司是否未在 Dark Web (暗網) 上出現大量企業憑證兜售的情資?
+99. 該公司是否未被列入政府採購的黑名單?
+100. 該公司是否在客戶滿意度調查 (如 NPS) 中保持正值?
+
 
 Response Template:
 # 🛡️ [Company Name] - 外部韌性 (ERE)
