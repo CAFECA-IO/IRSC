@@ -32,6 +32,4 @@ reports
 package-lock.json
 yarn.lock
 
-# Test and checklist data
-cheak list/
-checklist/
+/checklist
