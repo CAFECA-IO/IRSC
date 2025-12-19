@@ -20,13 +20,14 @@ export async function GET(req: NextRequest, { params }: { params: Promise<{ id: 
       const content = await fs.readFile(statusFilePath, 'utf-8');
       const statusData = JSON.parse(content);
       return NextResponse.json(statusData);
-    } catch (e) {
+    } catch {
       // File not found implies processing hasn't started writing status yet or invalid ID
       // Return 404 or a "pending" status if we trust the ID exists
       return NextResponse.json({ status: "pending", message: "Status not available yet" }, { status: 404 });
     }
 
   } catch (error: any) {
+    // eslint-disable-next-line no-console
     console.error("Status Check Error:", error);
     return NextResponse.json({ status: "error", error: "Internal Server Error" }, { status: 500 });
   }

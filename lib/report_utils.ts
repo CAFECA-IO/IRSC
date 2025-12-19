@@ -54,7 +54,7 @@ export async function fetchReportById(id: string): Promise<ReportData | null> {
         scores[dimensionName] = parseFloat(scoreMatch[1]);
       }
 
-    } catch (e) {
+    } catch {
       // ignore missing files
     }
   }

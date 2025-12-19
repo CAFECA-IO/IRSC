@@ -3,7 +3,7 @@
 import React, { useState, useCallback, useRef, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { UI_TEXT, DIMENSION_LABELS_MULTILINGUAL } from '@/constants/ui_text';
-import { extractScore, startAnalysis, getJobStatus, getRecentReports, getReportDetails, JobStatus } from '@/services/analyzer';
+import { extractScore, startAnalysis, getJobStatus, getRecentReports } from '@/services/analyzer';
 import { Dimension, Reports, Scores, Language, HistoryItem } from '@/interfaces/types';
 import { MarkdownView } from '@/components/markdown_view';
 import { IRSCRadarChart } from '@/components/irsc_radar_chart';
@@ -58,13 +58,14 @@ export default function Home() {
         setHistory(JSON.parse(stored));
       }
     } catch (e) {
+      // eslint-disable-next-line no-console
       console.error("Failed to load history", e);
     }
   }, []);
 
-  const saveToHistory = (newReports: Reports, newScores: Scores, name: string) => {
+  const saveToHistory = (newReports: Reports, newScores: Scores, name: string, reportId: string) => {
     const newItem: HistoryItem = {
-      id: Date.now().toString(),
+      id: reportId,
       timestamp: Date.now(),
       companyName: name,
       reports: newReports,
@@ -113,7 +114,10 @@ export default function Home() {
 
   useEffect(() => {
     if (isMenuOpen && historyTab === 'global') {
-      getRecentReports().then(setGlobalHistory).catch(console.error);
+      getRecentReports().then(setGlobalHistory).catch((e) => {
+        // eslint-disable-next-line no-console
+        console.error(e);
+      });
     }
   }, [isMenuOpen, historyTab]);
 
@@ -192,7 +196,7 @@ export default function Home() {
               }
             });
 
-            saveToHistory(finalReports, finalScores, companyName);
+            saveToHistory(finalReports, finalScores, companyName, jobId);
             setCurrentReportId(jobId);
 
             setTimeout(() => {
@@ -205,6 +209,7 @@ export default function Home() {
           }
 
         } catch (e) {
+          // eslint-disable-next-line no-console
           console.error("Polling error", e);
           // Don't stop on single poll error, retry
           setTimeout(poll, 3000);
@@ -214,6 +219,7 @@ export default function Home() {
       poll();
 
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.error(error);
       setError("Failed to start analysis.");
       setIsProcessing(false);

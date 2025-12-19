@@ -5,7 +5,7 @@ import { MarkdownView } from '@/components/markdown_view';
 import { IRSCRadarChart } from '@/components/irsc_radar_chart';
 import { CollapsibleSection } from '@/components/collapsible_section';
 import Link from 'next/link';
-import { Dimension, Reports, Scores } from '@/interfaces/types';
+
 
 import { Metadata } from 'next';
 
@@ -49,17 +49,7 @@ export default async function ReportPage({ params }: { params: Promise<{ id: str
     ? Math.round(dimensionScores.reduce((a, b) => a + b, 0) / dimensionScores.length * 10) / 10
     : 0;
 
-  // Radar Data
-  const radarData = [
-    { subject: 'ECQ', A: data.scores.ECQ || 0, fullMark: 100 },
-    { subject: 'MMP', A: data.scores.MMP || 0, fullMark: 100 },
-    { subject: 'UEE', A: data.scores.UEE || 0, fullMark: 100 },
-    { subject: 'GDI', A: data.scores.GDI || 0, fullMark: 100 },
-    { subject: 'TPM', A: data.scores.TPM || 0, fullMark: 100 },
-    { subject: 'SRR', A: data.scores.SRR || 0, fullMark: 100 },
-    { subject: 'ERE', A: data.scores.ERE || 0, fullMark: 100 },
-    { subject: 'GES', A: data.scores.GES || 0, fullMark: 100 },
-  ];
+
 
   return (
     <div className="min-h-screen bg-[#0f1115] text-slate-200 p-4 md:p-8">

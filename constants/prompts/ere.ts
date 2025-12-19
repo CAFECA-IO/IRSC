@@ -2,7 +2,7 @@ export const ERE = `
 Task: Execute the [ERE] External Risk Resilience audit.
 
 Objective:
-1. Audit based on "IRSC-ECQ Advanced Edition).
+1. Audit based on "IRSC-ERE Advanced Edition).
 2. Search Risk Factors (10-K), Global News.
 3. Calculate the score.
 
@@ -13,117 +13,116 @@ False (Fail): -0.5
 N/A (No Data): 0
 Range: 0 to 100
 
-ERE (IRSC-ECQ Advanced Edition)
-## 地緣政治與宏觀經濟 (Geopolitics & Macroeconomics) - 20題
-1. 該公司的主要營收來源國目前非處於戰爭或武裝衝突狀態?
-2. 該公司供應鏈不依賴於受國際嚴厲制裁的國家 (如目前的俄羅斯, 伊朗等)?
-3. 該公司產品未被列入主要大國 (如美國, 中國) 的出口管制或實體清單?
-4. 該公司主要市場的貨幣匯率在過去 12 個月內波動幅度小於 20%?
-5. 該公司是否已針對主要營運貨幣進行對沖 (Hedging) 以規避匯損?
-6. 該公司營收不單一依賴於政治高度不穩定的新興市場 (佔比 <30%)?
-7. 該公司總部所在地之企業稅率政策在未來 3 年內預期穩定?
-8. 該公司是否未受到跨國反避稅 (如全球最低稅負制) 的重大負面衝擊?
-9. 該公司所屬產業目前未處於中美貿易戰的關稅報復核心名單中?
-10. 該公司是否不受近期石油或天然氣價格劇烈波動的直接重大影響?
-11. 該公司在高通膨環境下, 是否具備轉嫁成本給客戶的定價能力?
-12. 該公司是否未面臨主要工廠所在地的國有化或資產徵收風險?
-13. 該公司是否與當地政府保持中立關係, 未捲入政黨輪替的清算風險?
-14. 該公司主要融資利率是否未受到聯準會升息的致命打擊 (如利息保障倍數仍 >3)?
-15. 該公司海外資金匯回 (Repatriation) 是否無重大資本管制障礙?
-16. 該公司是否未過度依賴單一國家的勞動力供給?
-17. 該公司是否未涉及敏感軍工或國安技術, 從而避免被外國政府強制審查?
-18. 該公司是否在脫歐 (Brexit) 或其他區域貿易協定變更後已完成合規調整?
-19. 該公司是否未受到主要市場針對外資企業的歧數政策影響?
-20. 該公司面對全球經濟衰退時, 其產品是否屬於剛性需求 (非週期性奢侈品)?
+Checklist (IRSC-ERE Advanced Edition)
+## I. 地緣政治與宏觀經濟 (Geopolitics & Macroeconomics)
+1. 無戰爭衝突: Is the company's primary revenue-generating country currently not in a state of war or armed conflict?
+2. 無制裁風險: Does the company's supply chain avoid reliance on heavily sanctioned countries (e.g., Russia, Iran)?
+3. 無出口管制: Are the company's products free from export controls or entity lists of major powers (e.g., US, China)?
+4. 匯率穩定: Has the currency fluctuation in the company's primary markets been less than 20% over the past 12 months?
+5. 匯損避險: Has the company hedged against its primary operating currencies to avoid exchange losses?
+6. 分散新興市場: Does the company avoid over-reliance on politically unstable emerging markets (<30% of revenue)?
+7. 稅務穩定: Is the corporate tax policy in the company's headquarters expected to remain stable for the next 3 years?
+8. 全球稅改: Has the company avoided major negative impacts from global minimum tax regulations?
+9. 貿易戰避險: Is the company's industry currently outside the core list of tariff retaliation in the US-China trade war?
+10. 能源抗性: Is the company free from direct major impacts of recent drastic fluctuations in oil or gas prices?
+11. 通膨轉嫁: Does the company possess pricing power to pass costs to customers in a high-inflation environment?
+12. 資產安全: Does the company face no risk of nationalization or asset expropriation in key factory locations?
+13. 政治中立: Does the company maintain a neutral relationship with the local government, avoiding liquidation risks from regime changes?
+14. 升息抗性: Is the company's interest coverage ratio (>3) sufficient to withstand Fed rate hikes?
+15. 資金匯回: Are there no major capital control barriers for repatriating overseas funds?
+16. 勞力分散: Does the company avoid over-reliance on the labor supply of a single country?
+17. 非敏感技術: Does the company avoid sensitive military or national security technologies to prevent foreign government scrutiny?
+18. 貿易合規: Has the company completed compliance adjustments following Brexit or other regional trade agreement changes?
+19. 非歧視待遇: Is the company free from discriminatory policies against foreign enterprises in its major markets?
+20. 剛性需求: Are the company's products considered essential (non-cyclical luxury) during a global economic recession?
 
-## 供應鏈與外部依賴 (Supply Chain & Dependencies) - 20題
-21. 該公司關鍵原物料供應商是否不具備單一來源 (Single Source) 風險?
-22. 該公司是否未依賴單一物流渠道 (如特定港口或運河) 導致斷鏈危機?
-23. 該公司上游供應商在過去 3 年內未發生重大勞工權益醜聞 (如強迫勞動)?
-24. 該公司是否擁有超過 3 個月以上的關鍵零組件安全庫存?
-25. 該公司是否未受到全球晶片或關鍵半導體短缺的直接停工威脅?
-26. 該公司主要生產基地是否具備備用電力系統以應對限電危機?
-27. 該公司是否未過度依賴特定客戶 (單一客戶營收佔比 <15%)?
-28. 該公司之雲端服務或數據中心是否具備異地備援機制?
-29. 該公司是否未面臨關鍵專利授權到期或被收回的外部風險?
-30. 該公司與主要供應商的合約是否包含不可抗力 (Force Majeure) 的保護條款?
-31. 該公司是否具備快速切換生產線以應對外部需求變化的能力?
-32. 該公司是否未受到國際航運價格飆漲的利潤嚴重侵蝕?
-33. 該公司是否未面臨上游原料被卡特爾 (Cartel) 組織聯合壟斷漲價的風險?
-34. 該公司經銷網絡是否分散, 未受制於單一大型通路商 (如 Amazon/Walmart) 的壓榨?
-35. 該公司是否未依賴特定稀缺自然資源 (如稀土, 鋰礦) 且無替代方案?
-36. 該公司是否已建立供應商多元化計畫以分散地緣風險?
-37. 該公司是否未發生過因供應商倒閉而導致的重大違約賠償?
-38. 該公司物流合作夥伴是否具備良好的工會關係, 無罷工風險?
-39. 該公司庫存周轉率是否健康, 無因外部需求驟降導致的庫存跌價損失?
-40. 該公司是否能夠獨立完成核心產品製造, 無需依賴競爭對手的代工?
+## II. 供應鏈與外部依賴 (Supply Chain & Dependencies)
+21. 無單一貨源: Do key raw material suppliers avoid "Single Source" risks?
+22. 物流多元: Does the company avoid reliance on a single logistics channel (e.g., specific ports or canals)?
+23. 勞權合規: Have upstream suppliers avoided major labor rights scandals (e.g., forced labor) in the past 3 years?
+24. 安全庫存: Does the company maintain a safety stock of critical components for more than 3 months?
+25. 晶片無虞: Is the company free from direct shutdown threats due to global chip or semiconductor shortages?
+26. 電力備援: Do major production bases have backup power systems to cope with power rationing crises?
+27. 客戶分散: Does the company avoid over-reliance on specific customers (single customer revenue <15%)?
+28. 異地備援: Do cloud services or data centers have off-site backup mechanisms?
+29. 專利穩固: Is the company free from external risks of critical patent licensing expiration or revocation?
+30. 不可抗力: Do contracts with major suppliers include "Force Majeure" protection clauses?
+31. 產線彈性: Does the company have the ability to quickly switch production lines to meet external demand changes?
+32. 運價抗性: Is the company's profit not severely eroded by soaring international shipping prices?
+33. 反壟斷: Is the company free from the risk of upstream raw materials being monopolized by cartels?
+34. 通路自主: Is the distribution network diversified and not squeezed by a single large channel (e.g., Amazon/Walmart)?
+35. 資源替代: Does the company avoid reliance on specific scarce natural resources (e.g., rare earths) without alternatives?
+36. 供應多元: Has the company established a supplier diversity program to spread geopolitical risks?
+37. 違約防範: Has the company avoided major default damages caused by supplier bankruptcy?
+38. 物流工會: Do logistics partners have good union relations with no strike risks?
+39. 庫存跌價: Is inventory turnover healthy, avoiding write-down losses due to sudden drops in external demand?
+40. 製造獨立: Can the company manufacture core products independently without relying on competitors for OEM?
 
-## 法律, 合規與監管 (Legal, Regulatory & Compliance) - 20題
-41. 該公司目前是否未捲入索賠金額超過淨值 5% 的集體訴訟?
-42. 該公司是否未受到反壟斷 (Antitrust) 機構的立案調查?
-43. 該公司高階管理層過去 5 年內未涉及證券欺詐或內線交易指控?
-44. 該公司產品是否符合歐盟 GDPR 或各國最嚴格的數據隱私法規?
-45. 該公司是否未因環境汙染問題遭到環保局的重大罰款或勒令停工?
-46. 該公司是否未涉及侵犯他人核心專利的法律糾紛?
-47. 該公司是否未受到美國 FDA 或相關衛生主管機關的產品召回 (Recall) 命令?
-48. 該公司財務報表是否連續 5 年獲得會計師出具 「無保留意見」?
-49. 該公司是否未被列入勞動機關的 「血汗工廠」 或重大違規名單?
-50. 該公司是否未涉及跨國賄賂案件 (如違反 FCPA)?
-51. 該公司是否已針對即將實施的碳稅 (Carbon Tax) 做好財務準備?
-52. 該公司是否未因廣告不實遭受消費者保護機構的鉅額罰款?
-53. 該公司是否未面臨加密貨幣或新興金融法規變動的合規打擊?
-54. 該公司之併購案是否未遭到監管機構否決?
-55. 該公司是否未因歧視性招聘或職場騷擾面臨重大法律訴訟?
-56. 該公司是否完全遵守當地的最低工資與工時法規?
-57. 該公司是否未涉及洗錢防制 (AML) 相關的調查或制裁?
-58. 該公司之特許經營權或執照 (License) 在未來 3 年內無被撤銷風險?
-59. 該公司是否未因軟體盜版或授權違規被起訴?
-60. 該公司是否設有獨立的法遵部門直接向董事會報告?
+## III. 法律、合規與監管 (Legal, Regulatory & Compliance)
+41. 無巨額訴訟: Is the company currently free from class-action lawsuits with claims exceeding 5% of net worth?
+42. 反壟斷調查: Is the company free from investigations by antitrust authorities?
+43. 高管清白: Have senior management avoided securities fraud or insider trading allegations in the past 5 years?
+44. 隱私合規: Do products comply with EU GDPR or the strictest data privacy regulations in various countries?
+45. 環保合規: Has the company avoided major fines or shutdown orders from environmental agencies due to pollution?
+46. 專利無憂: Is the company free from legal disputes involving infringement of others' core patents?
+47. 產品召回: Has the company avoided product recall orders from the FDA or relevant health authorities?
+48. 財報無保留: Have financial statements received an "Unqualified Opinion" from auditors for 5 consecutive years?
+49. 勞動合規: Is the company not listed on "sweatshop" or major violation lists by labor authorities?
+50. 反賄賂: Is the company free from transnational bribery cases (e.g., FCPA violations)?
+51. 碳稅準備: Is the company financially prepared for upcoming Carbon Tax implementation?
+52. 廣告誠信: Has the company avoided huge fines from consumer protection agencies for false advertising?
+53. 新興合規: Is the company free from compliance hits related to cryptocurrency or emerging financial regulations?
+54. 併購過關: Have the company's M&A deals avoided rejection by regulators?
+55. 無歧視訴訟: Is the company free from major lawsuits regarding discriminatory hiring or workplace harassment?
+56. 工資工時: Does the company fully comply with local minimum wage and working hour regulations?
+57. 反洗錢: Is the company free from investigations or sanctions related to Anti-Money Laundering (AML)?
+58. 執照穩固: Is there no risk of franchise rights or licenses being revoked in the next 3 years?
+59. 版權合規: Is the company free from lawsuits regarding software piracy or licensing violations?
+60. 法遵獨立: Does the company have an independent compliance department reporting directly to the Board?
 
-## 突發事件與災難韌性 (Black Swan & Disaster Resilience) - 20題
-61. 該公司是否已制定並演練過完整的業務連續性計畫 (BCP)?
-62. 該公司過去 12 個月內是否未發生導致服務中斷超過 24 小時的資安攻擊?
-63. 該公司主要資產是否已投保足額的火險, 水險與營運中斷險?
-64. 該公司總部與核心工廠是否位於非地震帶或非洪水高風險區?
-65. 該公司在 COVID-19 等大流行病期間, 是否證明具備遠距營運能力?
-66. 該公司是否未曾發生過大規模客戶個資外洩事件?
-67. 該公司是否具備應對勒索軟體 (Ransomware) 的備份還原機制?
-68. 該公司是否未因氣候變遷 (如極端高溫) 導致產能強制下降?
-69. 該公司是否針對關鍵技術人員設有 「關鍵人風險」 保險或繼任計畫?
-70. 該公司是否未發生過工安意外導致的人員死亡或重大停工?
-71. 該公司研發中心是否具備防止商業機密遭竊取的實體與數位防護?
-72. 該公司是否具備應對社交媒體假新聞攻擊的危機處理小組?
-73. 該公司是否未依賴單一老舊技術平台, 面臨技術崩潰風險?
-74. 該公司是否未因當地暴動或社會動盪導致資產受損?
-75. 該公司是否具備充足的現金流 (Cash Buffer) 以應對 6 個月零營收的極端狀況?
-76. 該公司是否未因供應鏈的碳足跡數據造假而陷入漂綠 (Greenwashing) 醜聞?
-77. 該公司是否具備應對能源價格瞬間飆漲 50% 的成本吸收能力?
-78. 該公司是否未面臨激進股東 (Activist Investor) 發起的經營權爭奪戰?
-79. 該公司是否未發生過高層無預警離職或失蹤的異常事件?
-80. 該公司是否具備應對核災或區域性生化危機的基本防護指引?
+## IV. 突發事件與災難韌性 (Black Swan & Disaster Resilience)
+61. BCP 演練: Has the company developed and rehearsed a complete Business Continuity Plan (BCP)?
+62. 資安防禦: Has the company avoided cyberattacks causing service interruptions >24 hours in the past 12 months?
+63. 保險足額: Are major assets fully insured against fire, flood, and business interruption?
+64. 選址安全: Are headquarters and core factories located in non-earthquake or low-flood risk zones?
+65. 遠距能力: Did the company demonstrate remote operation capabilities during pandemics like COVID-19?
+66. 個資安全: Has the company never experienced a large-scale customer data breach?
+67. 勒索防護: Does the company have backup and restore mechanisms to counter Ransomware?
+68. 氣候適應: Has the company avoided forced capacity reduction due to climate change (e.g., extreme heat)?
+69. 關鍵人保險: Does the company have "Key Man Risk" insurance or succession plans for critical technical staff?
+70. 工安零災: Has the company avoided industrial accidents causing fatalities or major shutdowns?
+71. 機密防護: Does the R&D center have physical and digital protection against trade secret theft?
+72. 假新聞應對: Does the company have a crisis management team to deal with social media fake news attacks?
+73. 技術更新: Does the company avoid relying on a single obsolete tech platform facing collapse risks?
+74. 社會安定: Has the company avoided asset damage due to local riots or social unrest?
+75. 現金緩衝: Does the company have a Cash Buffer sufficient for 6 months of zero revenue?
+76. 無漂綠: Has the company avoided "Greenwashing" scandals due to falsified supply chain carbon footprint data?
+77. 能源衝擊: Does the company have the cost absorption capacity to handle a 50% spike in energy prices?
+78. 股權穩定: Is the company free from proxy fights initiated by Activist Investors?
+79. 高層穩定: Has the company avoided abnormal events like executives resigning without warning or disappearing?
+80. 災難指引: Does the company have basic protection guidelines for nuclear disasters or regional biochemical crises?
 
-## 市場情緒與聲譽風險 (Market Sentiment & Reputation) - 20題
-81. 該公司過去 12 個月內未遭到知名做空機構 (Short Seller) 發布狙擊報告?
-82. 該公司在 Glassdoor 或類似職場評論網的員工滿意度是否高於 3.5 顆星?
-83. 該公司是否未發生過遭到網路上大規模抵制 (Boycott) 的事件?
-84. 該公司品牌是否未捲入具高度爭議的社會或政治議題?
-85. 該公司高層是否未在公開場合發表種族歧視或性別歧視言論?
-86. 該公司股價波動率 (Beta 值) 是否未異常高於同業平均水準?
-87. 該公司是否未被主要 ESG 評級機構 (如 MSCI, Sustainalytics) 降評?
-88. 該公司是否未出現大量內部人 (Insider) 拋售股票的訊號?
-89. 該公司是否未因產品設計缺陷導致消費者受傷的重大公關危機?
-90. 該公司與工會或勞工團體的關係是否和諧?
-91. 該公司是否未被媒體揭露 「有毒職場文化」?
-92. 該公司是否定期召開法說會並保持與投資人的透明溝通?
-93. 該公司分析師評級中, 「賣出」 建議的比例是否低於 10%?
-94. 該公司是否未涉及誤導投資人的財測 (Guidance) 修正?
-95. 該公司是否在主流社群媒體上擁有正面的品牌聲量 (Sentiment Analysis 為正)?
-96. 該公司是否未發生過挪用公款或各類掏空資產的傳聞?
-97. 該公司是否未過度依賴創辦人的個人光環 (Key Man Risk)?
-98. 該公司是否未在 Dark Web (暗網) 上出現大量企業憑證兜售的情資?
-99. 該公司是否未被列入政府採購的黑名單?
-100. 該公司是否在客戶滿意度調查 (如 NPS) 中保持正值?
-
+## V. 市場情緒與聲譽風險 (Market Sentiment & Reputation)
+81. 無做空報告: Has the company not been targeted by short-seller reports in the past 12 months?
+82. 員工滿意: Is employee satisfaction on Glassdoor or similar sites higher than 3.5 stars?
+83. 無抵制活動: Has the company avoided large-scale online Boycott events?
+84. 政治中立: Is the brand free from involvement in highly controversial social or political issues?
+85. 言論合宜: Have executives avoided making racist or sexist remarks in public?
+86. 股價穩定: Is the stock price volatility (Beta) not abnormally higher than the industry average?
+87. ESG 評級: Has the company avoided downgrades by major ESG rating agencies (e.g., MSCI)?
+88. 無拋售潮: Is there an absence of significant insider stock selling signals?
+89. 產品安全: Has the company avoided major PR crises due to product design flaws causing injuries?
+90. 勞資和諧: Is the relationship with unions or labor groups harmonious?
+91. 文化健康: Has the company not been exposed by media for having a "Toxic Workplace Culture"?
+92. 溝通透明: Does the company hold regular earnings calls and maintain transparent communication with investors?
+93. 分析師看好: Is the proportion of "Sell" recommendations in analyst ratings lower than 10%?
+94. 財測誠信: Has the company avoided misleading revisions of financial guidance?
+95. 社群聲量: Does the company have positive brand sentiment on mainstream social media?
+96. 無掏空傳聞: Is the company free from rumors of embezzlement or asset tunneling?
+97. 創辦人風險: Is the company not overly reliant on the founder's personal halo (Key Man Risk)?
+98. 暗網監控: Is there no intelligence of massive corporate credential sales on the Dark Web?
+99. 採購白名單: Is the company not listed on government procurement blacklists?
+100. 客戶口碑: Does the company maintain a positive score in customer satisfaction surveys (e.g., NPS)?
 
 Response Template:
 # 🛡️ [Company Name] - 外部韌性 (ERE)

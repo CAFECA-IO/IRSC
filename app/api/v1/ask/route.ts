@@ -1,7 +1,7 @@
 
 import { NextRequest, NextResponse } from "next/server";
 import { GoogleGenAI } from "@google/genai";
-import { Dimension, Language } from "@/interfaces/types";
+import { Language } from "@/interfaces/types";
 import { PROMPTS } from "@/constants/prompts";
 import fs from 'fs/promises';
 import path from 'path';
@@ -61,7 +61,7 @@ ${content}`;
     try {
       const existing = await fs.readFile(indexPath, 'utf-8');
       indexData = JSON.parse(existing);
-    } catch (e) {
+    } catch {
       // index might not exist yet
     }
 
@@ -167,6 +167,7 @@ export async function POST(req: NextRequest) {
         await writeStatus(reportId, dimension, 'completed', text);
 
       } catch (err: any) {
+        // eslint-disable-next-line no-console
         console.error("Background Generation Error:", err);
         await writeStatus(reportId, dimension, 'error', undefined, err.message);
       }
@@ -176,6 +177,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ reportId, status: 'processing' });
 
   } catch (error: any) {
+    // eslint-disable-next-line no-console
     console.error("Gemini API Request Error:", error);
     return NextResponse.json({ error: error.message || "Internal Server Error" }, { status: 500 });
   }
