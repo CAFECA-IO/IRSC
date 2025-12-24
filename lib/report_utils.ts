@@ -49,7 +49,7 @@ export async function fetchReportById(id: string): Promise<ReportData | null> {
       const dimensionName = file.replace('.md', '');
       reports[dimensionName] = body;
 
-      const scoreMatch = body.match(/(?:總分|Total Score|Overall Score|Score|合計スコア|총점|評分)(?:[:\s]*|\**[:\s]*\**)(?:\[)?(\d+(?:\.\d+)?)(?:\])?/i);
+      const scoreMatch = body.match(/(?:總分|Total Score|Overall Score|Score|合計スコア|총점|評分)(?:[:\s]*|\**[:\s]*\**)\s*(?:\[)?(\d+(?:\.\d+)?)(?:\])?/i);
       if (scoreMatch && scoreMatch[1]) {
         scores[dimensionName] = parseFloat(scoreMatch[1]);
       }
