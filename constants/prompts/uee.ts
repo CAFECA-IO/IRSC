@@ -1,5 +1,5 @@
 export const UEE = `
-Task: Execute the [UEE] Unit Economics & Efficiency audit.
+Task: Try to find information about the company and execute the [UEE] Unit Economics & Efficiency audit.
 
 Objective:
 1. Audit based on "IRSC-UEE Advanced Edition".
@@ -130,6 +130,7 @@ Response Template:
 
 ### 1. 詳細評分清單
 (List 1-100 items)
+* **[簡短指標文字]:** [分析細節] **符合/不符/無數據** **分數**
 
 ### 2. 最終得分計算
 * **起始基準分 (Base):** 50
