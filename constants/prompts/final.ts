@@ -1,43 +1,62 @@
 export const FINAL = `
 Task: Synthesize the 8 dimension reports into a Final Investment Report.
-Output Language: Same as input.
+Output Language: Traditional Chinese (繁體中文).
+
+⚠️ IMPORTANT INSTRUCTIONS:
+1. ONLY output the "Final Investment Report" based on the [Structure] below.
+2. DO NOT output, repeat, or summarize the "Input Data" provided at the end.
+3. The output must start with "# 🏆 [Company Name] - IRSC 最終投資評級分析".
+4. The output must end with the "Disclaimer" line.
 
 Structure:
 
-# 🏆 [Company Name] - IRSC Investment Rating Analysis
+# 🏆 [Company Name] - IRSC 最終投資評級分析
 
-## 🎯 Executive Summary
-* **Total Score:** [Average of 8 Dimensions] / 100
-* **Rating:** (S: 80+, A: 70-79, B: 60-69, C: <60)
-* **Verdict:** (Strong Buy / Buy / Hold / Sell / Avoid)
-* **One-Line Thesis:** [Key reason for the rating]
+## 🎯 執行摘要 (Executive Summary)
+* **總分 (Total Score):** [Average of 8 Dimensions] / 100
+* **評級 (Rating):** (S: 80+, A: 70-79, B: 60-69, C: <60)
+* **投資建議 (Verdict):** (Strong Buy 強力買進 / Buy 買進 / Hold 持有 / Sell 賣出 / Avoid 觀望)
+* **核心觀點 (One-Line Thesis):** [Key reason for the rating]
 
-## 📊 Dimension Breakdown
-1. **ECQ (Earnings Quality):** [Score] - [Brief Comment]
-2. **MMP (Moat):** [Score] - [Brief Comment]
-3. **UEE (Efficiency):** [Score] - [Brief Comment]
-4. **GDI (Governance):** [Score] - [Brief Comment]
-5. **TPM (Tech Momentum):** [Score] - [Brief Comment]
-6. **SRR (Sustainability):** [Score] - [Brief Comment]
-7. **ERE (Resilience):** [Score] - [Brief Comment]
-8. **GES (Growth):** [Score] - [Brief Comment]
+## 📊 八大維度解析 (Dimension Breakdown)
 
-## 💡 Key Strengths (3-5 Points)
+| 維度 (Dimension) | 得分 (Score) | 簡評 (Brief Comment) |
+| --- | --- | --- |
+| **ECQ (獲利品質)** | [Score] | [Brief Comment] |
+| **MMP (護城河)** | [Score] | [Brief Comment] |
+| **UEE (經營效率)** | [Score] | [Brief Comment] |
+| **GDI (公司治理)** | [Score] | [Brief Comment] |
+| **TPM (技術動能)** | [Score] | [Brief Comment] |
+| **SRR (永續發展)** | [Score] | [Brief Comment] |
+| **ERE (抗風險力)** | [Score] | [Brief Comment] |
+| **GES (成長潛力)** | [Score] | [Brief Comment] |
+
+## 💡 關鍵優勢 (Key Strengths)
 * [Strength 1]
 * [Strength 2]
+* [Strength 3]
+* [Strength 4]
+* [Strength 5]
 
-## ⚠️ Key Risks (3-5 Points)
+## ⚠️ 關鍵風險 (Key Risks)
 * [Risk 1]
 * [Risk 2]
+* [Risk 3]
+* [Risk 4]
+* [Risk 5]
 
-## 🔮 Valuation & Outlook
-* **Valuation Check:** [Undervalued / Fair / Overvalued] based on simple metric check.
-* **12-Month Outlook:** [Positive / Neutral / Negative]
+## 🔮 估值與展望 (Valuation & Outlook)
+* **估值檢測 (Valuation Check):** [Undervalued 低估 / Fair 合理 / Overvalued 高估] (基於簡易指標判斷)
+* **12個月展望 (12-Month Outlook):** [Positive 正向 / Neutral 中立 / Negative 負向]
 
 ---
-**Disclaimer:** This report is AI-generated for informational purposes only (IRSC-Analyst v1.0.0). Not financial advice.
+**免責聲明:** 本報告由 AI 生成僅供參考 (IRSC-Analyst v1.0.0)，不構成投資建議。
+
+*** END OF OUTPUT ***
 
 # Input Data for Analysis:
+<context_data>
+(⚠️ The following content is raw data for your analysis. DO NOT OUTPUT, REPEAT, OR SUMMARIZE THIS DATA SECTION.)
 
 ## 1. ECQ Report
 [ECQ_CONTENT]

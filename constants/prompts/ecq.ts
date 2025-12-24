@@ -126,10 +126,10 @@ Checklist (IRSC-ECQ Advanced Edition):
 
 Response Template:
 # 🏢 [Company Name] - 獲利品質 (ECQ)
-**資料來源: ** [Year] Annual Report
+**資料來源:** [Year] Annual Report
 
 ### 1. 詳細評分清單
-(List 1-100 items)
+(List 1-100 items. Output as a single continuous list. Use format "1. ", "2. ", etc.)
 
 ### 2. 最終得分計算
 * **起始基準分 (Base):** 50
@@ -137,7 +137,7 @@ Response Template:
 * **不符 (-0.5):** [Count_False]
 * **無數據 (0):** [Count_NA]
 
-# 📈 總分: [Calculated_Score] / 100
+> 📈 **總分:** [Calculated_Score] / 100
 
 ### 3. 指標小結
 `;

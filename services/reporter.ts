@@ -6,7 +6,7 @@ import path from 'path';
 import crypto from 'crypto';
 
 // Enhanced regex to capture integers and decimals (e.g., 46.5, 80.0)
-const SCORE_REGEX = /(?:總分|Total Score|Overall Score|Score|合計スコア|총점|評分)(?:[:\s]*|\**[:\s]*\**)(?:\[)?(\d+(?:\.\d+)?)(?:\])?/i;
+const SCORE_REGEX = /(?:總分|Total Score|Overall Score|Score|合計スコア|총점|評分)(?:[^\d]*?)(\d+(?:\.\d+)?)/i;
 
 const extractScore = (text: string): number => {
   const match = text.match(SCORE_REGEX);
@@ -20,10 +20,25 @@ const extractScore = (text: string): number => {
 // Helper to strip markdown code blocks and whitespace
 const cleanResponse = (text: string): string => {
   let cleaned = text;
-  // Remove ```markdown ... ``` or ``` ... ```
+
+  // 1. Strip Invisible Characters (BOM)
+  cleaned = cleaned.replace(/^\uFEFF/, '');
+
+  // 2. Normalize Newlines
+  cleaned = cleaned.replace(/\r\n/g, '\n');
+
+  // 3. Remove Markdown Code Blocks
   cleaned = cleaned.replace(/^```[a-z]*\n/i, '').replace(/```$/i, '');
-  // Using regex to catch start/end more reliably if they exist
   cleaned = cleaned.replace(/```(?:markdown)?/gi, '');
+
+  // 4. Truncate at End Markers (Input Data echoing)
+  const endMarkers = ["*** END OF OUTPUT ***", "# Input Data for Analysis:", "# 1. ECQ Report"];
+  for (const marker of endMarkers) {
+    if (cleaned.includes(marker)) {
+      cleaned = cleaned.split(marker)[0];
+    }
+  }
+
   return cleaned.trim();
 };
 
@@ -39,9 +54,9 @@ const getLanguageInstruction = (lang: Language): string => {
 
 const STRICT_PROTOCOLS = `
 **STRICT IDENTITY & ANTI-HALLUCINATION PROTOCOLS:**
-1. **Identity:** Audit the Target Company ONLY. Match the EXACT name. If financials are missing, DO NOT use a proxy/competitor.
+1. **Identity:** Audit the Target Company ONLY. Match the EXACT name.
 2. **Missing Data:** If specific data is not found, output "N/A" and Score 0.
-3. **Honesty:** NEVER fabricate numbers. NEVER use industry averages to fill gaps.
+3. **Honesty:** NEVER fabricate numbers. NEVER use industry averages.
 4. **Format:** Output strictly using Markdown Lists. Do not use tables.
 5. **No Filler:** Output ONLY the report content. Do not include "Here is the report" or any intro/outro text. Start directly with the content.
 `;
@@ -107,20 +122,31 @@ export async function generateDimensionReport(
   if (!prompt) throw new Error(`Prompt for dimension ${dimension} not found`);
 
   const langInstruction = getLanguageInstruction(language);
-  const fullPrompt = `${STRICT_PROTOCOLS}\n${langInstruction}\n\n**Target Company:** ${companyName}\n\n${prompt}`;
+  const fullPrompt = `**Target Company:** ${companyName}\n\n${prompt}`;
+
+  // Clean protocols (remove negative constraints if present to rely on architecture)
+  const systemProtocols = STRICT_PROTOCOLS.replace(/.*?DO NOT repeat.*?/g, '').trim();
 
   try {
     const response = await ai.models.generateContent({
       model: model,
+      config: {
+        systemInstruction: `${systemProtocols}\n${langInstruction}`,
+        tools: [{ googleSearch: {} }]
+      },
       contents: fullPrompt,
-      config: { tools: [{ googleSearch: {} }] }
     });
-    const text = response.text || "No response generated.";
+    // @ts-ignore
+    const text = typeof response.text === 'function' ? response.text() : response.text;
+
+    if (!text) {
+      return `No response generated. Candidates: ${JSON.stringify(response.candidates)}`;
+    }
     return cleanResponse(text);
   } catch (error: any) {
     // eslint-disable-next-line no-console
     console.error(`Error generating ${dimension}:`, error);
-    throw error;
+    return `Error generating report: ${error.message}`;
   }
 }
 
@@ -133,7 +159,7 @@ export async function generateFinalReportService(
 ): Promise<string> {
   const finalPromptTemplate = PROMPTS.FINAL;
   const langInstruction = getLanguageInstruction(language);
-  let fullPrompt = `${langInstruction}\n\n${finalPromptTemplate.replace("[Company Name]", companyName)}`;
+  let fullPrompt = finalPromptTemplate.replace("[Company Name]", companyName);
 
   const dims = ['ECQ', 'MMP', 'UEE', 'GDI', 'TPM', 'SRR', 'ERE', 'GES'];
   dims.forEach(dim => {
@@ -147,6 +173,9 @@ export async function generateFinalReportService(
   try {
     const response = await ai.models.generateContent({
       model: model,
+      config: {
+        systemInstruction: langInstruction
+      },
       contents: fullPrompt,
     });
     const text = response.text || "Failed to generate final report.";

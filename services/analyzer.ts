@@ -2,7 +2,8 @@
 import { Language } from "@/interfaces/types";
 
 // Enhanced regex to capture integers and decimals (e.g., 46.5, 80.0)
-const SCORE_REGEX = /(?:總分|Total Score|Overall Score|Score|合計スコア|총점|評分)(?:[:\s]*|\**[:\s]*\**)(?:\[)?(\d+(?:\.\d+)?)(?:\])?/i;
+// Enhanced regex to capture integers and decimals (e.g., 46.5, 80.0) -> handles "Score: **80**" or "**Score**: 80" or "Score 80"
+const SCORE_REGEX = /(?:總分|Total Score|Overall Score|Score|合計スコア|총점)(?:[^\d]*?)(\d+(?:\.\d+)?)/i;
 
 export const extractScore = (text: string): number => {
   const match = text.match(SCORE_REGEX);
