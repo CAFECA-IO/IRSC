@@ -2,7 +2,7 @@ export const SRR = `
 Task: Execute the [SRR] Sustainability & Regulatory Resilience audit.
 
 Objective:
-1. Audit based on "IRSC-SRR Advanced Edition.
+1. Audit based on "IRSC-SRR Advanced Edition".
 2. Search Sustainability Reports and Annual Reports.
 3. Calculate the score.
 
