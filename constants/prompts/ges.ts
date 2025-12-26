@@ -129,7 +129,14 @@ Response Template:
 **資料來源:** [Year] Investor Presentation
 
 ### 1. 詳細評分清單
-(List 1-100 items. Output as a single continuous list. Use format "1. ", "2. ", etc.)
+(Iterate through all sections. PRESERVE the Section Headers (e.g., "## I. Title..."). Under each section, list the items in valid Markdown format.
+Format: "[Number]. [Title]: [True/False/N/A]"
+Example:
+## I. Section Title
+1. Title: True
+2. Title: False
+...
+)
 
 ### 2. 最終得分計算
 * **起始基準分 (Base):** 50
