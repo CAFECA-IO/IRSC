@@ -21,6 +21,7 @@ interface JobState {
   results: Record<string, string>;
   error?: string;
   timestamp: string;
+  analysisType?: string;
 }
 
 const updateJobFile = async (jobId: string, data: Partial<JobState>) => {
@@ -52,7 +53,7 @@ const updateJobFile = async (jobId: string, data: Partial<JobState>) => {
 
 export async function POST(req: NextRequest) {
   try {
-    const { companyName, language } = await req.json();
+    const { companyName, language, analysisType = 'company' } = await req.json();
 
     if (!process.env.GEMINI_API_KEY) {
       return NextResponse.json({ error: "API Key is missing." }, { status: 500 });
@@ -68,7 +69,8 @@ export async function POST(req: NextRequest) {
       status: 'processing',
       progress: 0,
       currentStep: 'STARTING',
-      results: {}
+      results: {},
+      analysisType
     });
 
     // Start Background Process
@@ -86,11 +88,11 @@ export async function POST(req: NextRequest) {
           });
 
           // Generate
-          const text = await generateDimensionReport(ai, model, companyName, step, language);
+          const text = await generateDimensionReport(ai, model, companyName, step, language, analysisType);
           results[step] = text;
 
           // Save artifact
-          await saveReportToFile(text, 'report', { companyName, language, dimension: step, reportId: jobId });
+          await saveReportToFile(text, 'report', { companyName, language, dimension: step, reportId: jobId, analysisType });
 
           // Update Job with partial result
           await updateJobFile(jobId, {
@@ -107,10 +109,10 @@ export async function POST(req: NextRequest) {
           progress: 90
         });
 
-        const finalText = await generateFinalReportService(ai, model, companyName, results, language);
+        const finalText = await generateFinalReportService(ai, model, companyName, results, language, analysisType);
         results[Dimension.FINAL] = finalText;
 
-        await saveReportToFile(finalText, 'final_report', { companyName, language, dimension: Dimension.FINAL, reportId: jobId });
+        await saveReportToFile(finalText, 'final_report', { companyName, language, dimension: Dimension.FINAL, reportId: jobId, analysisType });
 
         // Complete
         await updateJobFile(jobId, {
@@ -120,21 +122,19 @@ export async function POST(req: NextRequest) {
           results: results
         });
 
-      } catch (err: any) {
-        // eslint-disable-next-line no-console
+      } catch (err: unknown) {
         console.error("Background Job Error:", err);
         await updateJobFile(jobId, {
           status: 'failed',
-          error: err.message || "Unknown error"
+          error: (err as Error).message || "Unknown error"
         });
       }
     })();
 
     return NextResponse.json({ jobId, status: 'started' });
 
-  } catch (error: any) {
-    // eslint-disable-next-line no-console
+  } catch (error: unknown) {
     console.error("Analysis Request Error:", error);
-    return NextResponse.json({ error: error.message }, { status: 500 });
+    return NextResponse.json({ error: (error as Error).message }, { status: 500 });
   }
 }

@@ -26,8 +26,7 @@ export async function GET(req: NextRequest, { params }: { params: Promise<{ id: 
       return NextResponse.json({ status: "pending", message: "Status not available yet" }, { status: 404 });
     }
 
-  } catch (error: any) {
-    // eslint-disable-next-line no-console
+  } catch (error: unknown) {
     console.error("Status Check Error:", error);
     return NextResponse.json({ status: "error", error: "Internal Server Error" }, { status: 500 });
   }

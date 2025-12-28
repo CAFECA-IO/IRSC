@@ -1,9 +1,40 @@
 
 import { Language } from '@/interfaces/types';
 
-export const UI_TEXT: Record<Language, any> = {
+
+interface UIText {
+  heroTitle: string;
+  heroSubtitle: string;
+  searchPlaceholder: string;
+  analyzeBtn: string;
+  stopBtn: string;
+  init: string;
+  step: string;
+  ready: string;
+  synthesis: string;
+  dimensionsHeader: string;
+  finalReport: string;
+  premium: string;
+  generatedBy: string;
+  generating: string;
+  recentInquiries: string;
+  menu: string;
+  historyHeader: string;
+  historyEmpty: string;
+  load: string;
+  delete: string;
+  clearHistory: string;
+  dashboard: string;
+  analysisTypes: {
+    company: string;
+    stock: string;
+    fund: string;
+  };
+}
+
+export const UI_TEXT: Record<Language, UIText> = {
   'zh-TW': {
-    heroTitle: "智能企業體質分析",
+    heroTitle: "人工智能分析",
     heroSubtitle: "8 大維度分析，提供投資人最有參考價值的資訊",
     searchPlaceholder: "輸入公司名稱或代號 (例如: TSMC, 2330.TW, Apple)",
     analyzeBtn: "開始分析",
@@ -24,10 +55,15 @@ export const UI_TEXT: Record<Language, any> = {
     load: "讀取",
     delete: "刪除",
     clearHistory: "清除所有紀錄",
-    dashboard: "儀表板"
+    dashboard: "儀表板",
+    analysisTypes: {
+      company: "公司",
+      stock: "股票",
+      fund: "基金"
+    }
   },
   'en': {
-    heroTitle: "Intelligent Corporate Analysis",
+    heroTitle: "Artificial Intelligence Analysis",
     heroSubtitle: "8-Dimension Analysis, Providing Investors with the Most Valuable Insights",
     searchPlaceholder: "Enter Company Name or Ticker (e.g., TSMC, Apple)",
     analyzeBtn: "Analyze",
@@ -48,10 +84,15 @@ export const UI_TEXT: Record<Language, any> = {
     load: "Load",
     delete: "Delete",
     clearHistory: "Clear All",
-    dashboard: "Dashboard"
+    dashboard: "Dashboard",
+    analysisTypes: {
+      company: "Company",
+      stock: "Stock",
+      fund: "Fund"
+    }
   },
   'ja': {
-    heroTitle: "インテリジェント企業分析",
+    heroTitle: "人工知能分析",
     heroSubtitle: "8つの次元分析、投資家に最も価値のある情報を提供",
     searchPlaceholder: "会社名またはティッカーを入力 (例: TSMC, Apple)",
     analyzeBtn: "分析開始",
@@ -72,10 +113,15 @@ export const UI_TEXT: Record<Language, any> = {
     load: "開く",
     delete: "削除",
     clearHistory: "すべて削除",
-    dashboard: "ダッシュボード"
+    dashboard: "ダッシュボード",
+    analysisTypes: {
+      company: "会社",
+      stock: "株式",
+      fund: "ファンド"
+    }
   },
   'ko': {
-    heroTitle: "지능형 기업 분석",
+    heroTitle: "인공지능 분석",
     heroSubtitle: "8차원 분석, 투자자에게 가장 가치 있는 정보 제공",
     searchPlaceholder: "회사명 또는 티커 입력 (예: TSMC, Apple)",
     analyzeBtn: "분석 시작",
@@ -96,11 +142,16 @@ export const UI_TEXT: Record<Language, any> = {
     load: "로드",
     delete: "삭제",
     clearHistory: "모두 지우기",
-    dashboard: "대시보드"
+    dashboard: "대시보드",
+    analysisTypes: {
+      company: "회사",
+      stock: "주식",
+      fund: "펀드"
+    }
   }
 };
 
-export const DIMENSION_LABELS_MULTILINGUAL: Record<Language, any> = {
+export const DIMENSION_LABELS_MULTILINGUAL: Record<Language, Record<string, string>> = {
   'zh-TW': {
     ECQ: "獲利品質 (ECQ)",
     MMP: "護城河地位 (MMP)",

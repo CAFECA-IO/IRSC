@@ -4,6 +4,7 @@ import { fetchReportById } from '@/lib/report_utils';
 import { MarkdownView } from '@/components/markdown_view';
 import { IRSCRadarChart } from '@/components/irsc_radar_chart';
 import { CollapsibleSection } from '@/components/collapsible_section';
+import { Scores } from '@/interfaces/types';
 import Link from 'next/link';
 
 
@@ -75,7 +76,7 @@ export default async function ReportPage({ params }: { params: Promise<{ id: str
             <div className="text-sm text-slate-400 uppercase tracking-widest">Overall Score</div>
           </div>
           <div className="flex-1 w-full">
-            <IRSCRadarChart scores={data.scores as any} />
+            <IRSCRadarChart scores={data.scores as unknown as Scores} />
           </div>
         </div>
 

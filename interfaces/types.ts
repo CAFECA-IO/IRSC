@@ -13,6 +13,8 @@ export enum Dimension {
 
 export type Language = 'zh-TW' | 'en' | 'ja' | 'ko';
 
+export type AnalysisType = 'company' | 'stock' | 'fund';
+
 export interface AnalysisState {
   status: 'idle' | 'running' | 'completed' | 'error';
   currentStepIndex: number; // 0 to 8
@@ -36,4 +38,5 @@ export interface HistoryItem {
   reports: Reports;
   scores: Scores;
   language: Language;
+  analysisType: AnalysisType;
 }

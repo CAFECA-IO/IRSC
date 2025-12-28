@@ -1,5 +1,5 @@
 import { GoogleGenAI } from "@google/genai";
-import { Dimension, Language } from "@/interfaces/types";
+import { Dimension, Language, AnalysisType } from "@/interfaces/types";
 import { PROMPTS } from "@/constants/prompts";
 import fs from 'fs/promises';
 import path from 'path';
@@ -46,9 +46,9 @@ const STRICT_PROTOCOLS = `
 5. **No Filler:** Output ONLY the report content. Do not include "Here is the report" or any intro/outro text. Start directly with the content.
 `;
 
-export async function saveReportToFile(content: string, type: string, payload: any): Promise<string> {
+export async function saveReportToFile(content: string, type: string, payload: Record<string, unknown>): Promise<string> {
   const { companyName, reportId: providedId } = payload;
-  const reportId = providedId || crypto.randomUUID();
+  const reportId = (providedId as string) || crypto.randomUUID();
   const outputDir = process.env.REPORT_OUTPUT_DIR || 'reports';
   const reportDir = path.join(process.cwd(), outputDir, reportId);
 
@@ -72,7 +72,7 @@ ${content}`;
   // Update Global Index if it's a final report
   if (type === 'final_report') {
     const indexPath = path.join(process.cwd(), outputDir, 'index.json');
-    let indexData: any[] = [];
+    let indexData: Record<string, unknown>[] = [];
     try {
       const existing = await fs.readFile(indexPath, 'utf-8');
       indexData = JSON.parse(existing);
@@ -100,11 +100,14 @@ export async function generateDimensionReport(
   model: string,
   companyName: string,
   dimension: Dimension,
-  language: Language
+  language: Language,
+  analysisType: AnalysisType = 'company'
 ): Promise<string> {
-  // @ts-ignore
-  const prompt = PROMPTS[dimension];
-  if (!prompt) throw new Error(`Prompt for dimension ${dimension} not found`);
+  const promptGroup = PROMPTS[dimension];
+  if (!promptGroup) throw new Error(`Prompt for dimension ${dimension} not found`);
+
+  // Select prompt based on analysis type
+  const prompt = promptGroup[analysisType] || promptGroup['company'];
 
   const langInstruction = getLanguageInstruction(language);
   const fullPrompt = `${STRICT_PROTOCOLS}\n${langInstruction}\n\n**Target Company:** ${companyName}\n\n${prompt}`;
@@ -117,8 +120,7 @@ export async function generateDimensionReport(
     });
     const text = response.text || "No response generated.";
     return cleanResponse(text);
-  } catch (error: any) {
-    // eslint-disable-next-line no-console
+  } catch (error: unknown) {
     console.error(`Error generating ${dimension}:`, error);
     throw error;
   }
@@ -129,9 +131,14 @@ export async function generateFinalReportService(
   model: string,
   companyName: string,
   reports: Record<string, string>,
-  language: Language
+  language: Language,
+  analysisType: AnalysisType = 'company'
 ): Promise<string> {
-  const finalPromptTemplate = PROMPTS.FINAL;
+  const finalPromptGroup = PROMPTS.FINAL;
+
+  // Select prompt based on analysis type
+  const finalPromptTemplate = finalPromptGroup[analysisType] || finalPromptGroup['company'];
+
   const langInstruction = getLanguageInstruction(language);
   let fullPrompt = `${langInstruction}\n\n${finalPromptTemplate.replace("[Company Name]", companyName)}`;
 
@@ -148,11 +155,11 @@ export async function generateFinalReportService(
     const response = await ai.models.generateContent({
       model: model,
       contents: fullPrompt,
+      config: { tools: [{ googleSearch: {} }] }
     });
     const text = response.text || "Failed to generate final report.";
     return cleanResponse(text);
-  } catch (error: any) {
-    // eslint-disable-next-line no-console
+  } catch (error: unknown) {
     console.error("Error generating Final Report:", error);
     throw error;
   }

@@ -1,7 +1,7 @@
 
 import { NextRequest, NextResponse } from "next/server";
 import { GoogleGenAI } from "@google/genai";
-import { Language } from "@/interfaces/types";
+import { Language, Dimension, AnalysisType } from "@/interfaces/types";
 import { PROMPTS } from "@/constants/prompts";
 import fs from 'fs/promises';
 import path from 'path';
@@ -30,9 +30,9 @@ const STRICT_PROTOCOLS = `
 4. **Format:** Output strictly using Markdown Lists. Do not use tables.
 `;
 
-async function saveReportToFile(content: string, type: string, payload: any): Promise<string> {
+async function saveReportToFile(content: string, type: string, payload: Record<string, unknown>): Promise<string> {
   const { companyName, reportId: providedId } = payload;
-  const reportId = providedId || crypto.randomUUID();
+  const reportId = (providedId as string) || crypto.randomUUID();
   const outputDir = process.env.REPORT_OUTPUT_DIR || 'reports';
   const reportDir = path.join(process.cwd(), outputDir, reportId);
 
@@ -57,7 +57,7 @@ ${content}`;
   // Update Global Index if it's a final report
   if (type === 'final_report') {
     const indexPath = path.join(process.cwd(), outputDir, 'index.json');
-    let indexData: any[] = [];
+    let indexData: Record<string, unknown>[] = [];
     try {
       const existing = await fs.readFile(indexPath, 'utf-8');
       indexData = JSON.parse(existing);
@@ -126,8 +126,9 @@ export async function POST(req: NextRequest) {
 
         if (type === 'report') {
           const { model, language, companyName } = payload;
-          // @ts-ignore
-          const prompt = PROMPTS[payload.dimension];
+          const promptGroup = PROMPTS[payload.dimension as Dimension];
+          const { analysisType = 'company' } = payload;
+          const prompt = promptGroup[analysisType as AnalysisType] || promptGroup['company'];
           const langInstruction = getLanguageInstruction(language);
           const fullPrompt = `${STRICT_PROTOCOLS}\n${langInstruction}\n\n**Target Company:** ${companyName}\n\n${prompt}`;
 
@@ -139,8 +140,9 @@ export async function POST(req: NextRequest) {
           text = response.text || "No response generated.";
 
         } else if (type === 'final_report') {
-          const { reports, language, companyName } = payload;
-          const finalPromptTemplate = PROMPTS.FINAL;
+          const { reports, language, companyName, analysisType = 'company' } = payload;
+          const finalPromptGroup = PROMPTS.FINAL;
+          const finalPromptTemplate = finalPromptGroup[analysisType as AnalysisType] || finalPromptGroup['company'];
           const langInstruction = getLanguageInstruction(language);
           let fullPrompt = `${langInstruction}\n\n${finalPromptTemplate.replace("[Company Name]", companyName)}`;
 
@@ -156,6 +158,7 @@ export async function POST(req: NextRequest) {
           const response = await ai.models.generateContent({
             model,
             contents: fullPrompt,
+            config: { tools: [{ googleSearch: {} }] }
           });
           text = response.text || "Failed to generate final report.";
         }
@@ -166,19 +169,17 @@ export async function POST(req: NextRequest) {
         // Update Status to Completed
         await writeStatus(reportId, dimension, 'completed', text);
 
-      } catch (err: any) {
-        // eslint-disable-next-line no-console
+      } catch (err: unknown) {
         console.error("Background Generation Error:", err);
-        await writeStatus(reportId, dimension, 'error', undefined, err.message);
+        await writeStatus(reportId, dimension, 'error', undefined, (err as Error).message);
       }
     })();
 
     // 3. Return immediately
     return NextResponse.json({ reportId, status: 'processing' });
 
-  } catch (error: any) {
-    // eslint-disable-next-line no-console
+  } catch (error: unknown) {
     console.error("Gemini API Request Error:", error);
-    return NextResponse.json({ error: error.message || "Internal Server Error" }, { status: 500 });
+    return NextResponse.json({ error: (error as Error).message || "Internal Server Error" }, { status: 500 });
   }
 }
