@@ -4,12 +4,12 @@
 import React, { useState, useCallback, useRef, useEffect } from 'react';
 import { extractScore, startAnalysis, getJobStatus, getRecentReports } from '@/services/analyzer';
 import { Dimension, Reports, Scores, Language, HistoryItem } from '@/interfaces/types';
-import { Navbar } from '@/components/home/Navbar';
-import { HistoryDrawer } from '@/components/home/HistoryDrawer';
-import { HeroSection } from '@/components/home/HeroSection';
-import { RecentHistory } from '@/components/home/RecentHistory';
-import { LoadingOverlay } from '@/components/home/LoadingOverlay';
-import { ResultsDashboard } from '@/components/home/ResultsDashboard';
+import { Navbar } from '@/components/home/navbar';
+import { HistoryDrawer } from '@/components/home/history_drawer';
+import { HeroSection } from '@/components/home/hero_section';
+import { RecentHistory } from '@/components/home/recent_history';
+import { LoadingOverlay } from '@/components/home/loading_overlay';
+import { ResultsDashboard } from '@/components/home/results_dashboard';
 
 const HISTORY_KEY = 'isunfa_history_v1';
 const MAX_HISTORY = 10;

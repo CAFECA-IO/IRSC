@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   metadataBase: new URL(url),
   title: 'iSunFA IRSC Analyst',
   description: 'AI-powered financing suitability analysis',
+  icons: {
+    icon: '/logo/favicon.svg',
+  },
 }
 
 export default function RootLayout({
